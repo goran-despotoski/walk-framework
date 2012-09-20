@@ -10,9 +10,9 @@
  * @param string $class The css class
  * @param string $styles Styles
  */
-function url($controller='', $action = '',$title = '' ,$arguments = array(), $plus = array(),$class="", $styles="")
+function url($controller='', $action = '',$title = '' ,$arguments = array(), $get_variables = array(),$class="", $styles="")
 {
-	echo linkReturn($controller, $action,$title ,$arguments, $plus, $class, $styles);
+	echo linkReturn($controller, $action,$title ,$arguments, $get_variables, $class, $styles);
 }
 
 /**
@@ -27,14 +27,14 @@ function url($controller='', $action = '',$title = '' ,$arguments = array(), $pl
  * @param string $styles
  * @author Goran Despotoski
  */
-function linkReturn($controller='', $action = '',$title = '' ,$arguments = array(), $plus = array(),$class="", $styles="")
+function linkReturn($controller='', $action = '',$title = '' ,$arguments = array(), $get_variables = array(), $class="", $styles="")
 {
 	$globals = GlobalRegistry::getInstance();
 	$args = '';
 	$styles = 'style="' . $styles .'"';
 	$class= 'class="'.$class.'"';
 
-	return '<a href="'.urlBuild($controller, $action, $arguments) . '" '.$styles.' '.$class.'>'.$title.'</a>';
+	return '<a href="'.urlBuild($controller, $action, $arguments, $get_variables) . '" '.$styles.' '.$class.'>'.$title.'</a>';
 }
 
 /**
