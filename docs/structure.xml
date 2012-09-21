@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a10" title="">
-  <file path="system/base/model.php" hash="f5873baa134e8909bd73acb63eff5796" package="system\data-handling">
+  <file path="system/base/model.php" hash="69a7949af41ec40ce34b4ceb55a6863b" package="system\data-handling">
     <docblock line="2">
       <description><![CDATA[]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -41,223 +41,239 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="28" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="35" package="system\data-handling">
         <name>getLimitStart</name>
         <full_name>getLimitStart</full_name>
-        <argument line="28">
+        <docblock line="28">
+          <description><![CDATA[Gets the limit for paging]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="param" description="" type="string" variable="$count_sql">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="param" description="" type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="28" name="param" description="" type="int" variable="$page">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="28" name="param" description="" type="int" variable="$page_size">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="35">
           <name>$count_sql</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="28">
+        <argument line="35">
           <name>$params</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="28">
+        <argument line="35">
           <name>$page</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="28">
+        <argument line="35">
           <name>$page_size</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="53" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="60" package="system\data-handling">
         <name>getById</name>
         <full_name>getById</full_name>
-        <docblock line="45">
+        <docblock line="52">
           <description><![CDATA[Gets row by id(or whatever the key column's name is by changing $id_column value to corresponding column name)]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="45" name="param" description="" type="int" variable="$id">
+          <tag line="52" name="param" description="" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="45" name="param" description="return DataAccessResult" type="string" variable="$id_column">
+          <tag line="52" name="param" description="return DataAccessResult" type="string" variable="$id_column">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="45" name="author" description="Goran Despotoski"/>
+          <tag line="52" name="author" description="Goran Despotoski"/>
         </docblock>
-        <argument line="53">
+        <argument line="60">
           <name>$id</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="53">
+        <argument line="60">
           <name>$id_column</name>
           <default><![CDATA["id"]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="78" package="system\data-handling">
         <name>save</name>
         <full_name>save</full_name>
-        <docblock line="63">
+        <docblock line="70">
           <description><![CDATA[Updates table if $key[1] is > 0 and if $key[1] == 0 inserts a new row]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="63" name="param" description="Structure $key = array($key_name, $key_value)" type="array" variable="$key">
+          <tag line="70" name="param" description="Structure $key = array($key_name, $key_value)" type="array" variable="$key">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="63" name="param" description="" type="array" variable="$fields">
+          <tag line="70" name="param" description="" type="array" variable="$fields">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="63" name="return" description="" type="\DataAccessResult|false">
+          <tag line="70" name="return" description="" type="\DataAccessResult|false">
             <type by_reference="false">\DataAccessResult</type>
             <type by_reference="false">false</type>
           </tag>
-          <tag line="63" name="author" description="Goran Despotoski"/>
+          <tag line="70" name="author" description="Goran Despotoski"/>
         </docblock>
-        <argument line="71">
+        <argument line="78">
           <name>$key</name>
           <default><![CDATA[array("id", 0)]]></default>
           <type/>
         </argument>
-        <argument line="71">
+        <argument line="78">
           <name>$fields</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="112" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="119" package="system\data-handling">
         <name>deleteById</name>
         <full_name>deleteById</full_name>
-        <docblock line="104">
+        <docblock line="111">
           <description><![CDATA[Delete rows by id(you can delete multiple if you change $column to other value based on your table layout (1:m relation))]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="104" name="param" description="" type="int" variable="$id">
+          <tag line="111" name="param" description="" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="104" name="param" description="" type="string" variable="$column">
+          <tag line="111" name="param" description="" type="string" variable="$column">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="104" name="return" description="" type="\DataAccessResult">
+          <tag line="111" name="return" description="" type="\DataAccessResult">
             <type by_reference="false">\DataAccessResult</type>
           </tag>
-          <tag line="104" name="author" description="Goran Despotoski"/>
+          <tag line="111" name="author" description="Goran Despotoski"/>
         </docblock>
-        <argument line="112">
+        <argument line="119">
           <name>$id</name>
           <default><![CDATA[0]]></default>
           <type/>
         </argument>
-        <argument line="112">
+        <argument line="119">
           <name>$column</name>
           <default><![CDATA["id"]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="126" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="133" package="system\data-handling">
         <name>getAll</name>
         <full_name>getAll</full_name>
-        <docblock line="120">
+        <docblock line="127">
           <description><![CDATA[Gets all rows in table]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="120" name="param" description="comma separated string injected in select part of query" type="string" variable="$select_columns">
+          <tag line="127" name="param" description="comma separated string injected in select part of query" type="string" variable="$select_columns">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="120" name="author" description="Goran Despotoski"/>
+          <tag line="127" name="author" description="Goran Despotoski"/>
         </docblock>
-        <argument line="126">
+        <argument line="133">
           <name>$select_columns</name>
           <default><![CDATA["*"]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="146" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="153" package="system\data-handling">
         <name>getAllFiltered</name>
         <full_name>getAllFiltered</full_name>
-        <docblock line="133">
+        <docblock line="140">
           <description><![CDATA[Gets all rows filtered]]></description>
           <long-description><![CDATA[<p>$filters[row] = array(  "column"=>"which column",
                             "operation"=>"value like = &lt; &lt;>",
                             "value"=>"compare to what value")</p>]]></long-description>
-          <tag line="133" name="param" description="" type="array" variable="$filters">
+          <tag line="140" name="param" description="" type="array" variable="$filters">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="133" name="param" description="" type="string" variable="$select_columns">
+          <tag line="140" name="param" description="" type="string" variable="$select_columns">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="133" name="return" description="&lt;boolean, DataAccessResult&gt;" type="\Ambigous">
+          <tag line="140" name="return" description="&lt;boolean, DataAccessResult&gt;" type="\Ambigous">
             <type by_reference="false">\Ambigous</type>
           </tag>
-          <tag line="133" name="author" description="Goran Despotoski"/>
+          <tag line="140" name="author" description="Goran Despotoski"/>
         </docblock>
-        <argument line="146">
+        <argument line="153">
           <name>$filters</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
-        <argument line="146">
+        <argument line="153">
           <name>$select_columns</name>
           <default><![CDATA["*"]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="164" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="171" package="system\data-handling">
         <name>getAllPaged</name>
         <full_name>getAllPaged</full_name>
-        <argument line="164">
+        <argument line="171">
           <name>$select_columns</name>
           <default><![CDATA["*"]]></default>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="171">
           <name>$page</name>
           <default><![CDATA[1]]></default>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="171">
           <name>$col</name>
           <default><![CDATA['id']]></default>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="171">
           <name>$sort</name>
           <default><![CDATA['ASC']]></default>
           <type/>
         </argument>
-        <argument line="164">
+        <argument line="171">
           <name>$page_size</name>
           <default><![CDATA[1]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="185" package="system\data-handling">
         <name>getAllPagedFiltered</name>
         <full_name>getAllPagedFiltered</full_name>
-        <argument line="178">
+        <argument line="185">
           <name>$filters</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
-        <argument line="178">
+        <argument line="185">
           <name>$select_columns</name>
           <default><![CDATA["*"]]></default>
           <type/>
         </argument>
-        <argument line="178">
+        <argument line="185">
           <name>$page</name>
           <default><![CDATA[1]]></default>
           <type/>
         </argument>
-        <argument line="178">
+        <argument line="185">
           <name>$col</name>
           <default><![CDATA['id']]></default>
           <type/>
         </argument>
-        <argument line="178">
+        <argument line="185">
           <name>$sort</name>
           <default><![CDATA['ASC']]></default>
           <type/>
         </argument>
-        <argument line="178">
+        <argument line="185">
           <name>$page_size</name>
           <default><![CDATA[1]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="210" package="system\data-handling">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="217" package="system\data-handling">
         <name>getLastId</name>
         <full_name>getLastId</full_name>
       </method>
@@ -269,10 +285,9 @@
       <error line="18" code="50018">No DocBlock was found for property $sql</error>
       <error line="20" code="50018">No DocBlock was found for property $page_count</error>
       <error line="22" code="50010">No DocBlock was found for method __construct()</error>
-      <error line="28" code="50010">No DocBlock was found for method getLimitStart()</error>
-      <error line="164" code="50010">No DocBlock was found for method getAllPaged()</error>
-      <error line="178" code="50010">No DocBlock was found for method getAllPagedFiltered()</error>
-      <error line="210" code="50010">No DocBlock was found for method getLastId()</error>
+      <error line="171" code="50010">No DocBlock was found for method getAllPaged()</error>
+      <error line="185" code="50010">No DocBlock was found for method getAllPagedFiltered()</error>
+      <error line="217" code="50010">No DocBlock was found for method getLastId()</error>
     </parse_markers>
   </file>
   <file path="system/base/dispatcher.php" hash="9377f115b7680e17f47ffd51356043df" package="system\request-handling">

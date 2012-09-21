@@ -25,6 +25,13 @@ class Model extends Dao
 		parent::__construct();
 	}
 	
+	/**
+	 * Gets the limit for paging 
+	 * @param string $count_sql
+	 * @param array $params
+	 * @param int $page
+	 * @param int $page_size
+	 */
 	protected function getLimitStart($count_sql,$params, $page, $page_size) 
 	{
 		if((int)$page < 1) $page = 1;
