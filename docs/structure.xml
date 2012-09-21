@@ -1,0 +1,2569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a10" title="">
+  <file path="system/base/model.php" hash="f5873baa134e8909bd73acb63eff5796" package="system\data-handling">
+    <docblock line="2">
+      <description><![CDATA[]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="package" description="system\data-handling"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="14" package="system\data-handling">
+      <extends>\Dao</extends>
+      <name>Model</name>
+      <full_name>\Model</full_name>
+      <docblock line="7">
+        <description><![CDATA[This class is an added layer for simpler usage in concrete models]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="7" name="package" description="system\data-handling"/>
+        <tag line="7" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="16" namespace="global" package="Default">
+        <name>$db</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="17" namespace="global" package="Default">
+        <name>$table_name</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="18" namespace="global" package="Default">
+        <name>$sql</name>
+        <default><![CDATA[""]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="20" namespace="global" package="Default">
+        <name>$page_count</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="22" package="system\data-handling">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="22">
+          <name>$table_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="28" package="system\data-handling">
+        <name>getLimitStart</name>
+        <full_name>getLimitStart</full_name>
+        <argument line="28">
+          <name>$count_sql</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$params</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$page</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$page_size</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="53" package="system\data-handling">
+        <name>getById</name>
+        <full_name>getById</full_name>
+        <docblock line="45">
+          <description><![CDATA[Gets row by id(or whatever the key column's name is by changing $id_column value to corresponding column name)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="45" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="45" name="param" description="return DataAccessResult" type="string" variable="$id_column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="45" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="53">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$id_column</name>
+          <default><![CDATA["id"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="system\data-handling">
+        <name>save</name>
+        <full_name>save</full_name>
+        <docblock line="63">
+          <description><![CDATA[Updates table if $key[1] is > 0 and if $key[1] == 0 inserts a new row]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="param" description="Structure $key = array($key_name, $key_value)" type="array" variable="$key">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="63" name="param" description="" type="array" variable="$fields">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="63" name="return" description="" type="\DataAccessResult|false">
+            <type by_reference="false">\DataAccessResult</type>
+            <type by_reference="false">false</type>
+          </tag>
+          <tag line="63" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="71">
+          <name>$key</name>
+          <default><![CDATA[array("id", 0)]]></default>
+          <type/>
+        </argument>
+        <argument line="71">
+          <name>$fields</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="112" package="system\data-handling">
+        <name>deleteById</name>
+        <full_name>deleteById</full_name>
+        <docblock line="104">
+          <description><![CDATA[Delete rows by id(you can delete multiple if you change $column to other value based on your table layout (1:m relation))]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="104" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="104" name="param" description="" type="string" variable="$column">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="104" name="return" description="" type="\DataAccessResult">
+            <type by_reference="false">\DataAccessResult</type>
+          </tag>
+          <tag line="104" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="112">
+          <name>$id</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+        <argument line="112">
+          <name>$column</name>
+          <default><![CDATA["id"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="126" package="system\data-handling">
+        <name>getAll</name>
+        <full_name>getAll</full_name>
+        <docblock line="120">
+          <description><![CDATA[Gets all rows in table]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="120" name="param" description="comma separated string injected in select part of query" type="string" variable="$select_columns">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="120" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="126">
+          <name>$select_columns</name>
+          <default><![CDATA["*"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="146" package="system\data-handling">
+        <name>getAllFiltered</name>
+        <full_name>getAllFiltered</full_name>
+        <docblock line="133">
+          <description><![CDATA[Gets all rows filtered]]></description>
+          <long-description><![CDATA[<p>$filters[row] = array(  "column"=>"which column",
+                            "operation"=>"value like = &lt; &lt;>",
+                            "value"=>"compare to what value")</p>]]></long-description>
+          <tag line="133" name="param" description="" type="array" variable="$filters">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="133" name="param" description="" type="string" variable="$select_columns">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="133" name="return" description="&lt;boolean, DataAccessResult&gt;" type="\Ambigous">
+            <type by_reference="false">\Ambigous</type>
+          </tag>
+          <tag line="133" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="146">
+          <name>$filters</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+        <argument line="146">
+          <name>$select_columns</name>
+          <default><![CDATA["*"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="164" package="system\data-handling">
+        <name>getAllPaged</name>
+        <full_name>getAllPaged</full_name>
+        <argument line="164">
+          <name>$select_columns</name>
+          <default><![CDATA["*"]]></default>
+          <type/>
+        </argument>
+        <argument line="164">
+          <name>$page</name>
+          <default><![CDATA[1]]></default>
+          <type/>
+        </argument>
+        <argument line="164">
+          <name>$col</name>
+          <default><![CDATA['id']]></default>
+          <type/>
+        </argument>
+        <argument line="164">
+          <name>$sort</name>
+          <default><![CDATA['ASC']]></default>
+          <type/>
+        </argument>
+        <argument line="164">
+          <name>$page_size</name>
+          <default><![CDATA[1]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="system\data-handling">
+        <name>getAllPagedFiltered</name>
+        <full_name>getAllPagedFiltered</full_name>
+        <argument line="178">
+          <name>$filters</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+        <argument line="178">
+          <name>$select_columns</name>
+          <default><![CDATA["*"]]></default>
+          <type/>
+        </argument>
+        <argument line="178">
+          <name>$page</name>
+          <default><![CDATA[1]]></default>
+          <type/>
+        </argument>
+        <argument line="178">
+          <name>$col</name>
+          <default><![CDATA['id']]></default>
+          <type/>
+        </argument>
+        <argument line="178">
+          <name>$sort</name>
+          <default><![CDATA['ASC']]></default>
+          <type/>
+        </argument>
+        <argument line="178">
+          <name>$page_size</name>
+          <default><![CDATA[1]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="210" package="system\data-handling">
+        <name>getLastId</name>
+        <full_name>getLastId</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file system/base/model.php</critical>
+      <error line="16" code="50018">No DocBlock was found for property $db</error>
+      <error line="17" code="50018">No DocBlock was found for property $table_name</error>
+      <error line="18" code="50018">No DocBlock was found for property $sql</error>
+      <error line="20" code="50018">No DocBlock was found for property $page_count</error>
+      <error line="22" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="28" code="50010">No DocBlock was found for method getLimitStart()</error>
+      <error line="164" code="50010">No DocBlock was found for method getAllPaged()</error>
+      <error line="178" code="50010">No DocBlock was found for method getAllPagedFiltered()</error>
+      <error line="210" code="50010">No DocBlock was found for method getLastId()</error>
+    </parse_markers>
+  </file>
+  <file path="system/base/dispatcher.php" hash="9377f115b7680e17f47ffd51356043df" package="system\request-handling">
+    <docblock line="2">
+      <description><![CDATA[]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="package" description="system\request-handling"/>
+    </docblock>
+    <include line="69" type="Include" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="17" package="system\request-handling">
+      <extends/>
+      <name>Dispatcher</name>
+      <full_name>\Dispatcher</full_name>
+      <docblock line="10">
+        <description><![CDATA[Dispatches all the requests to controllers and actions
+Returns an error message to the user if the controller or action don't exist]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="10" name="package" description="system\request-handling"/>
+        <tag line="10" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="19" package="system\request-handling">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file system/base/dispatcher.php</critical>
+      <error line="19" code="50010">No DocBlock was found for method __construct()</error>
+    </parse_markers>
+  </file>
+  <file path="system/base/error_handler.php" hash="afcb92fd056cca7292db3acb1e00b73e" package="system\error-handling">
+    <docblock line="2">
+      <description><![CDATA[]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="package" description="system\error-handling"/>
+    </docblock>
+    <function namespace="global" line="16" package="system\error-handling">
+      <name>customError</name>
+      <full_name>\customError</full_name>
+      <docblock line="7">
+        <description><![CDATA[Handles errors thrown by php apps (known)]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="7" name="param" description="" type="int" variable="$errno">
+          <type by_reference="false">int</type>
+        </tag>
+        <tag line="7" name="param" description="" type="string" variable="$errstr">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="7" name="param" description="" type="string" variable="$errfile">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="7" name="param" description="" type="string" variable="$errline">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="7" name="param" description="" type="\unknown_type" variable="$errcontext">
+          <type by_reference="false">\unknown_type</type>
+        </tag>
+      </docblock>
+      <argument line="16">
+        <name>$errno</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="16">
+        <name>$errstr</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="16">
+        <name>$errfile</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="16">
+        <name>$errline</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="16">
+        <name>$errcontext</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file system/base/error_handler.php</critical>
+    </parse_markers>
+  </file>
+  <file path="system/base/GlobalRegistry.php" hash="e62db59ade4ef9c9c763318d2b11f774" package="system\data-handling">
+    <docblock line="2">
+      <description><![CDATA[]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="package" description="system\data-handling"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="24" package="system\data-handling">
+      <extends/>
+      <name>GlobalRegistry</name>
+      <full_name>\GlobalRegistry</full_name>
+      <docblock line="6">
+        <description><![CDATA[GlobalRegistry class is used for storage of global variables in order to prevent interruptions in the global
+variable workspace and use its attributes in functions and classes easily]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="6" name="property" description="" type="string" variable="$siteUrl">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="6" name="property" description="" type="string" variable="$fileSystemPath">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="6" name="property" description="" type="string" variable="$defaultController">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="6" name="property" description="" type="string" variable="$defaultAction">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="6" name="property" description="" type="string" variable="$userFriendlyUrls">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="6" name="property" description="" type="string" variable="$md4Salt">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="6" name="property" description="" type="array" variable="$db">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="6" name="property" description="" type="array" variable="$viewData">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="6" name="property" description="" type="array" variable="$libraries">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="6" name="package" description="system\data-handling"/>
+        <tag line="6" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <property final="false" static="true" visibility="public" line="26" namespace="global" package="Default">
+        <name>$_instance</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="30" package="system\data-handling">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="27">
+          <description><![CDATA[Empty constructor: this is due to the fact that it is a singleton object so no objects are created]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="34" package="system\data-handling">
+        <name>__clone</name>
+        <full_name>__clone</full_name>
+        <docblock line="31">
+          <description><![CDATA[Clone function is empty so that an object can't be cloned.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="39" package="system\data-handling">
+        <name>getInstance</name>
+        <full_name>getInstance</full_name>
+        <docblock line="36">
+          <description><![CDATA[Function for getting an instance of the global registry variable]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="52" package="system\data-handling">
+        <name>__get</name>
+        <full_name>__get</full_name>
+        <docblock line="48">
+          <description><![CDATA[Magic getter for GlobalRegistry attributes]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="48" name="param" description="" type="" variable="$key"/>
+        </docblock>
+        <argument line="52">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="61" package="system\data-handling">
+        <name>__set</name>
+        <full_name>__set</full_name>
+        <docblock line="56">
+          <description><![CDATA[Magic setter for GlobalRegistry attributes]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="56" name="param" description="" type="\unknown_type" variable="$key">
+            <type by_reference="false">\unknown_type</type>
+          </tag>
+          <tag line="56" name="param" description="" type="\unknown_type" variable="$value">
+            <type by_reference="false">\unknown_type</type>
+          </tag>
+        </docblock>
+        <argument line="61">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="61">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file system/base/GlobalRegistry.php</critical>
+      <error line="26" code="50018">No DocBlock was found for property $_instance</error>
+    </parse_markers>
+  </file>
+  <file path="system/base/controller.php" hash="c8ac22734626718d823e62c1ef4f0c7a" package="system\request-handling">
+    <docblock line="2">
+      <description><![CDATA[]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="package" description="system\request-handling"/>
+    </docblock>
+    <include line="61" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="84" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="89" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="93" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="102" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="117" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="126" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="147" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="21" package="system\request-handling">
+      <extends/>
+      <name>Controller</name>
+      <full_name>\Controller</full_name>
+      <docblock line="8">
+        <description><![CDATA[Controller class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="8" name="property" description="" type="\GlobalRegistry" variable="$global">
+          <type by_reference="false">\GlobalRegistry</type>
+        </tag>
+        <tag line="8" name="property" description="" type="array" variable="$post;">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="8" name="property" description="" type="array" variable="$data;">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="8" name="property" description="" type="array" variable="$input_errors;">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="8" name="property" description="" type="string" variable="$message;">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="8" name="property" description="" type="string" variable="$message_type;">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="8" name="package" description="system\request-handling"/>
+        <tag line="8" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="23" namespace="global" package="Default">
+        <name>$global</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="24" namespace="global" package="Default">
+        <name>$post</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="25" namespace="global" package="Default">
+        <name>$data</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="26" namespace="global" package="Default">
+        <name>$message</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="27" namespace="global" package="Default">
+        <name>$message_type</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="28" namespace="global" package="Default">
+        <name>$components</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="34" package="system\request-handling">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="30">
+          <description><![CDATA[Initialize the controller, get the global registry.]]></description>
+          <long-description><![CDATA[<p>Set default title. Load a library.</p>]]></long-description>
+          <tag line="30" name="author" description="Goran Despotoski"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="57" package="system\request-handling">
+        <name>load_model</name>
+        <full_name>load_model</full_name>
+        <docblock line="52">
+          <description><![CDATA[Loads a model with $model name, after which it is invoked like this: $this->$model->method()]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="param" description="" type="string" variable="$model">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="52" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="57">
+          <name>$model</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="78" package="system\request-handling">
+        <name>load_view</name>
+        <full_name>load_view</full_name>
+        <docblock line="71">
+          <description><![CDATA[Loads a view into controller with array $data full of data that is needed in the view]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="param" description="view that is to be called" type="string" variable="$view">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="71" name="param" description="top file that is to be called if there is common top or bottom" type="string" variable="$top">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="71" name="param" description="bottom file that is to be called if there is common top or bottom" type="string" variable="$bottom">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="71" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="78">
+          <name>$view</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="78">
+          <name>$top</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+        <argument line="78">
+          <name>$bottom</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="113" package="system\request-handling">
+        <name>load_helper</name>
+        <full_name>load_helper</full_name>
+        <docblock line="107">
+          <description><![CDATA[Loads helper for using]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="107" name="param" description="" type="" variable="$helper"/>
+          <tag line="107" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="113">
+          <name>$helper</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="122" package="system\request-handling">
+        <name>load_component</name>
+        <full_name>load_component</full_name>
+        <argument line="122">
+          <name>$component</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="122">
+          <name>$type</name>
+          <default><![CDATA["object"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="143" package="system\request-handling">
+        <name>load_library</name>
+        <full_name>load_library</full_name>
+        <docblock line="134">
+          <description><![CDATA[Loads library for using class in the library
+If library is in subfolder, include the local path from libraries
+Example call: $this->load_library("auth/auth.php");
+calling the class would be: $obj = new auth();]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="134" name="param" description="" type="" variable="$library"/>
+          <tag line="134" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="143">
+          <name>$library</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="157" package="system\request-handling">
+        <name>_post</name>
+        <full_name>_post</full_name>
+        <docblock line="152">
+          <description><![CDATA[Gets the value of the POST variable with index key $field]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="152" name="param" description="" type="string" variable="$field">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="152" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="157">
+          <name>$varname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="157">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="157">
+          <name>$default</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="186" package="system\request-handling">
+        <name>_get</name>
+        <full_name>_get</full_name>
+        <docblock line="181">
+          <description><![CDATA[Gets the value of the classic GET variable from query string after ? with index key $field]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="181" name="param" description="" type="string" variable="$field">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="181" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="186">
+          <name>$varname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="186">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="186">
+          <name>$default</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="217" package="system\request-handling">
+        <name>_isPost</name>
+        <full_name>_isPost</full_name>
+        <docblock line="211">
+          <description><![CDATA[Checks if page is accessed throug POST method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="211" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="211" name="author" description="Goran Despotoski"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file system/base/controller.php</critical>
+      <error line="23" code="50018">No DocBlock was found for property $global</error>
+      <error line="24" code="50018">No DocBlock was found for property $post</error>
+      <error line="25" code="50018">No DocBlock was found for property $data</error>
+      <error line="26" code="50018">No DocBlock was found for property $message</error>
+      <error line="27" code="50018">No DocBlock was found for property $message_type</error>
+      <error line="28" code="50018">No DocBlock was found for property $components</error>
+      <error line="122" code="50010">No DocBlock was found for method load_component()</error>
+      <error line="152" code="50014">Name of argument $varname does not match with the DocBlock's name $field in _post()</error>
+      <error line="152" code="50015">Argument $type is missing from the Docblock of _post()</error>
+      <error line="152" code="50015">Argument $default is missing from the Docblock of _post()</error>
+      <notice line="152" code="50013">Parameter $field could not be found in _post()</notice>
+      <error line="181" code="50014">Name of argument $varname does not match with the DocBlock's name $field in _get()</error>
+      <error line="181" code="50015">Argument $type is missing from the Docblock of _get()</error>
+      <error line="181" code="50015">Argument $default is missing from the Docblock of _get()</error>
+      <notice line="181" code="50013">Parameter $field could not be found in _get()</notice>
+    </parse_markers>
+  </file>
+  <file path="system/base/DataAccess.php" hash="aa31336ccde178d48b1eae06e11e968d" package="system\data-handling">
+    <docblock line="2">
+      <description><![CDATA[]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="package" description="system\data-handling"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="16" package="system\data-handling">
+      <extends/>
+      <name>DataAccess</name>
+      <full_name>\DataAccess</full_name>
+      <docblock line="9">
+        <description><![CDATA[Data Access Object plus]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="9" name="property" description="" type="\PDO" variable="$db">
+          <type by_reference="false">\PDO</type>
+        </tag>
+        <tag line="9" name="package" description="system\data-handling"/>
+        <tag line="9" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="18" namespace="global" package="Default">
+        <name>$db</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="system\data-handling">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="20">
+          <name>$host</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="20">
+          <name>$user</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="20">
+          <name>$pass</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="20">
+          <name>$db</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="49" package="system\data-handling">
+        <name>fetch</name>
+        <full_name>fetch</full_name>
+        <docblock line="40">
+          <description><![CDATA[Returns result from a given sql query with given parameters]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="param" description="Sql query" type="string" variable="$sql">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="40" name="param" description="" type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="40" name="throws" description="If there is an error with db connection, error is shown" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+          <tag line="40" name="return" description="" type="\walkmvc\data\DataAccessResult">
+            <type by_reference="false">\walkmvc\data\DataAccessResult</type>
+          </tag>
+        </docblock>
+        <argument line="49">
+          <name>$sql</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="49">
+          <name>$params</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="72" package="system\data-handling">
+        <name>getLastId</name>
+        <full_name>getLastId</full_name>
+        <docblock line="69">
+          <description><![CDATA[Gets the last insert id after inserting operation]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="system\data-handling">
+        <name>isError</name>
+        <full_name>isError</full_name>
+        <docblock line="77">
+          <description><![CDATA[Gets the error code]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="94" package="Default">
+      <extends/>
+      <name>DataAccessResult</name>
+      <full_name>\DataAccessResult</full_name>
+      <docblock line="86">
+        <description><![CDATA[Provides interface for most common methods for result manipulation]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="86" name="property" description="" type="\PDOStatement" variable="$res">
+          <type by_reference="false">\PDOStatement</type>
+        </tag>
+        <tag line="86" name="property" description="" type="\DataAccess" variable="$da">
+          <type by_reference="false">\DataAccess</type>
+        </tag>
+        <tag line="86" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="96" namespace="global" package="Default">
+        <name>$da</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="97" namespace="global" package="Default">
+        <name>$res</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="99" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="99">
+          <name>$da</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="99">
+          <name>$res</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="110" package="Default">
+        <name>getRow</name>
+        <full_name>getRow</full_name>
+        <docblock line="105">
+          <description><![CDATA[Gets a new row from the result set or returns]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="105" name="return" description="Returns result row on true, and false when there are no rows found" type="array|false">
+            <type by_reference="false">array</type>
+            <type by_reference="false">false</type>
+          </tag>
+          <tag line="105" name="author" description="Goran Despotoski"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="123" package="Default">
+        <name>getVar</name>
+        <full_name>getVar</full_name>
+        <docblock line="118">
+          <description><![CDATA[Gets the first element of the first row]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="118" name="return" description="Returns first element from result row or false when there are no rows found" type="string|false">
+            <type by_reference="false">string</type>
+            <type by_reference="false">false</type>
+          </tag>
+          <tag line="118" name="author" description="Goran Despotoski"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="134" package="Default">
+        <name>reset</name>
+        <full_name>reset</full_name>
+        <docblock line="130">
+          <description><![CDATA[Resets the result set to first row]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="130" name="author" description="Goran Despotoski"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="Default">
+        <name>rowCount</name>
+        <full_name>rowCount</full_name>
+        <docblock line="140">
+          <description><![CDATA[Gets the row count of result set]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="140" name="return" description="Row count of result set" type="\number">
+            <type by_reference="false">\number</type>
+          </tag>
+          <tag line="140" name="author" description="Goran Despotoski"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="154" package="Default">
+        <name>isError</name>
+        <full_name>isError</full_name>
+        <docblock line="149">
+          <description><![CDATA[Checks if query returned an error and returns an error, otherwise returns false]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="149" name="return" description="Returns string for error code or false if no error code was found" type="string|false">
+            <type by_reference="false">string</type>
+            <type by_reference="false">false</type>
+          </tag>
+          <tag line="149" name="author" description="Goran Despotoski"/>
+        </docblock>
+      </method>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="169" package="Default">
+      <extends/>
+      <name>Dao</name>
+      <full_name>\Dao</full_name>
+      <docblock line="163">
+        <description><![CDATA[Provides basic methods for executing update/insert commands and retrieving from select commands]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="163" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="171" namespace="global" package="Default">
+        <name>$da</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="173" namespace="global" package="Default">
+        <name>$global</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="175" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="188" package="Default">
+        <name>retrieve</name>
+        <full_name>retrieve</full_name>
+        <docblock line="180">
+          <description><![CDATA[Executes query and returns DataAccessResult]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="180" name="param" description="" type="string" variable="$sql">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="180" name="param" description="" type="array" variable="$params">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="180" name="return" description="" type="boolean|\DataAccessResult">
+            <type by_reference="false">boolean</type>
+            <type by_reference="false">\DataAccessResult</type>
+          </tag>
+          <tag line="180" name="author" description="Goran Despotoski"/>
+        </docblock>
+        <argument line="188">
+          <name>$sql</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="188">
+          <name>$params</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="203" package="Default">
+        <name>update</name>
+        <full_name>update</full_name>
+        <argument line="203">
+          <name>$sql</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="203">
+          <name>$params</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="215" package="Default">
+        <name>getLastId</name>
+        <full_name>getLastId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="220" package="Default">
+        <name>DataAccessFactory</name>
+        <full_name>DataAccessFactory</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="2" code="50008">No short description for file system/base/DataAccess.php</critical>
+      <error line="18" code="50018">No DocBlock was found for property $db</error>
+      <error line="20" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="96" code="50018">No DocBlock was found for property $da</error>
+      <error line="97" code="50018">No DocBlock was found for property $res</error>
+      <error line="99" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="171" code="50018">No DocBlock was found for property $da</error>
+      <error line="173" code="50018">No DocBlock was found for property $global</error>
+      <error line="175" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="203" code="50010">No DocBlock was found for method update()</error>
+      <error line="215" code="50010">No DocBlock was found for method getLastId()</error>
+      <error line="220" code="50010">No DocBlock was found for method DataAccessFactory()</error>
+    </parse_markers>
+  </file>
+  <file path="system/helpers/time.php" hash="61b5ba016749099deea0ecc6ef62927e" package="Default">
+    <function namespace="global" line="2" package="Default">
+      <name>standardTime</name>
+      <full_name>\standardTime</full_name>
+      <argument line="2">
+        <name>$time</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/helpers/time.php</error>
+      <error line="2" code="50009">No DocBlock was found for function \standardTime()</error>
+    </parse_markers>
+  </file>
+  <file path="system/helpers/paging.php" hash="f65786087e6e4c05aca2279eaf9359d9" package="Default">
+    <function namespace="global" line="2" package="Default">
+      <name>ShowAdminPaging</name>
+      <full_name>\ShowAdminPaging</full_name>
+      <argument line="2">
+        <name>$prefix_array</name>
+        <default><![CDATA[array()]]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="16" package="Default">
+      <name>ShowPublicPaging</name>
+      <full_name>\ShowPublicPaging</full_name>
+      <argument line="16">
+        <name>$prefix_array</name>
+        <default><![CDATA[array()]]></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/helpers/paging.php</error>
+      <error line="2" code="50009">No DocBlock was found for function \ShowAdminPaging()</error>
+      <error line="16" code="50009">No DocBlock was found for function \ShowPublicPaging()</error>
+    </parse_markers>
+  </file>
+  <file path="system/helpers/form.php" hash="36efebb8bdf4ae8dd3e48cae771229e5" package="Default">
+    <function namespace="global" line="2" package="Default">
+      <name>form_start</name>
+      <full_name>\form_start</full_name>
+      <argument line="2">
+        <name>$method</name>
+        <default><![CDATA["GET"]]></default>
+        <type/>
+      </argument>
+      <argument line="2">
+        <name>$action</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="2">
+        <name>$name</name>
+        <default><![CDATA["default"]]></default>
+        <type/>
+      </argument>
+      <argument line="2">
+        <name>$misc</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="7" package="Default">
+      <name>form_end</name>
+      <full_name>\form_end</full_name>
+    </function>
+    <function namespace="global" line="12" package="Default">
+      <name>form_textbox</name>
+      <full_name>\form_textbox</full_name>
+      <argument line="12">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="12">
+        <name>$value</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="12">
+        <name>$class</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="12">
+        <name>$id</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="12">
+        <name>$misc</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="17" package="Default">
+      <name>form_textarea</name>
+      <full_name>\form_textarea</full_name>
+      <argument line="17">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="17">
+        <name>$value</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="17">
+        <name>$class</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="17">
+        <name>$id</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="17">
+        <name>$misc</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="22" package="Default">
+      <name>form_passbox</name>
+      <full_name>\form_passbox</full_name>
+      <argument line="22">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="22">
+        <name>$value</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="22">
+        <name>$class</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="22">
+        <name>$id</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="22">
+        <name>$misc</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="27" package="Default">
+      <name>form_checkbox</name>
+      <full_name>\form_checkbox</full_name>
+      <argument line="27">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="27">
+        <name>$value</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="27">
+        <name>$class</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="27">
+        <name>$id</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="27">
+        <name>$misc</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="32" package="Default">
+      <name>form_submit</name>
+      <full_name>\form_submit</full_name>
+      <argument line="32">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="32">
+        <name>$value</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="32">
+        <name>$class</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="32">
+        <name>$id</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="32">
+        <name>$misc</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="40" package="Default">
+      <name>showSuccessMessage</name>
+      <full_name>\showSuccessMessage</full_name>
+      <argument line="40">
+        <name>$status_message</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/helpers/form.php</error>
+      <error line="2" code="50009">No DocBlock was found for function \form_start()</error>
+      <error line="7" code="50009">No DocBlock was found for function \form_end()</error>
+      <error line="12" code="50009">No DocBlock was found for function \form_textbox()</error>
+      <error line="17" code="50009">No DocBlock was found for function \form_textarea()</error>
+      <error line="22" code="50009">No DocBlock was found for function \form_passbox()</error>
+      <error line="27" code="50009">No DocBlock was found for function \form_checkbox()</error>
+      <error line="32" code="50009">No DocBlock was found for function \form_submit()</error>
+      <error line="40" code="50009">No DocBlock was found for function \showSuccessMessage()</error>
+    </parse_markers>
+  </file>
+  <file path="system/helpers/output.php" hash="d479035d2fc4ed9f739b19521633b8e9" package="Default">
+    <function namespace="global" line="2" package="Default">
+      <name>cleanOutput</name>
+      <full_name>\cleanOutput</full_name>
+      <argument line="2">
+        <name>$variable</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/helpers/output.php</error>
+      <error line="2" code="50009">No DocBlock was found for function \cleanOutput()</error>
+    </parse_markers>
+  </file>
+  <file path="system/helpers/text.php" hash="52bc1db8d7cc9f1358c4908f2be17e68" package="Default">
+    <function namespace="global" line="12" package="Default">
+      <name>truncateText</name>
+      <full_name>\truncateText</full_name>
+      <docblock line="2">
+        <description><![CDATA[Truncates the text with wanted size, break characted and adds pad, returns the same string when size is less than $limit]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="param" description="String to be truncated" type="string" variable="$string">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="2" name="param" description="Length of result string" type="integer" variable="$limit">
+          <type by_reference="false">integer</type>
+        </tag>
+        <tag line="2" name="param" description="What is the end delimiter to break at" type="\character" variable="$break">
+          <type by_reference="false">\character</type>
+        </tag>
+        <tag line="2" name="param" description="What should be shown on end of truncated string()" type="string" variable="$pad">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="2" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <argument line="12">
+        <name>$string</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="12">
+        <name>$limit</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="12">
+        <name>$break</name>
+        <default><![CDATA[" "]]></default>
+        <type/>
+      </argument>
+      <argument line="12">
+        <name>$pad</name>
+        <default><![CDATA["..."]]></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/helpers/text.php</error>
+    </parse_markers>
+  </file>
+  <file path="system/helpers/url.php" hash="07b96288896b4f37691d4468c5b40ac5" package="Default">
+    <function namespace="global" line="13" package="Default">
+      <name>url</name>
+      <full_name>\url</full_name>
+      <docblock line="3">
+        <description><![CDATA[Creates a HTML url from given parameters(userfriendly if GlobalRegistry::userFriendlyUrls is true, or nonuserfriendly urls
+if it is false)]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="param" description="" type="string" variable="$controller">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="3" name="param" description="" type="string" variable="$action">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="3" name="param" description="" type="array" variable="$arguments">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="3" name="param" description="" type="array" variable="$plus">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="3" name="param" description="The css class" type="string" variable="$class">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="3" name="param" description="Styles" type="string" variable="$styles">
+          <type by_reference="false">string</type>
+        </tag>
+      </docblock>
+      <argument line="13">
+        <name>$controller</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+      <argument line="13">
+        <name>$action</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+      <argument line="13">
+        <name>$title</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+      <argument line="13">
+        <name>$arguments</name>
+        <default><![CDATA[array()]]></default>
+        <type/>
+      </argument>
+      <argument line="13">
+        <name>$get_variables</name>
+        <default><![CDATA[array()]]></default>
+        <type/>
+      </argument>
+      <argument line="13">
+        <name>$class</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="13">
+        <name>$styles</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="30" package="Default">
+      <name>linkReturn</name>
+      <full_name>\linkReturn</full_name>
+      <docblock line="18">
+        <description><![CDATA[Builds a link with given]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="18" name="param" description="" type="string" variable="$controller">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="18" name="param" description="" type="string" variable="$action">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="18" name="param" description="" type="string" variable="$title">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="18" name="param" description="" type="array" variable="$arguments">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="18" name="param" description="" type="string" variable="$plus">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="18" name="param" description="" type="string" variable="$class">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="18" name="param" description="" type="string" variable="$styles">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="18" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <argument line="30">
+        <name>$controller</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+      <argument line="30">
+        <name>$action</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+      <argument line="30">
+        <name>$title</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+      <argument line="30">
+        <name>$arguments</name>
+        <default><![CDATA[array()]]></default>
+        <type/>
+      </argument>
+      <argument line="30">
+        <name>$get_variables</name>
+        <default><![CDATA[array()]]></default>
+        <type/>
+      </argument>
+      <argument line="30">
+        <name>$class</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+      <argument line="30">
+        <name>$styles</name>
+        <default><![CDATA[""]]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="48" package="Default">
+      <name>urlBuild</name>
+      <full_name>\urlBuild</full_name>
+      <docblock line="40">
+        <description><![CDATA[Builds and returns the url for the given controller, action and arguments(array)]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="40" name="param" description="" type="string" variable="$controller">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="40" name="param" description="" type="string" variable="$action">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="40" name="param" description="" type="array" variable="$arguments">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="40" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <argument line="48">
+        <name>$controller</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+      <argument line="48">
+        <name>$action</name>
+        <default><![CDATA['']]></default>
+        <type/>
+      </argument>
+      <argument line="48">
+        <name>$arguments</name>
+        <default><![CDATA[array()]]></default>
+        <type/>
+      </argument>
+      <argument line="48">
+        <name>$get_variables</name>
+        <default><![CDATA[array()]]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="65" package="Default">
+      <name>redirect</name>
+      <full_name>\redirect</full_name>
+      <docblock line="59">
+        <description><![CDATA[Short for die(header()) syntax]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="59" name="param" description="Url to redirect to" type="string" variable="$where">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="59" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <argument line="65">
+        <name>$where</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/helpers/url.php</error>
+      <error line="3" code="50014">Name of argument $title does not match with the DocBlock's name $arguments in \url()</error>
+      <error line="3" code="50014">Name of argument $arguments does not match with the DocBlock's name $plus in \url()</error>
+      <error line="3" code="50014">Name of argument $get_variables does not match with the DocBlock's name $class in \url()</error>
+      <error line="3" code="50014">Name of argument $class does not match with the DocBlock's name $styles in \url()</error>
+      <error line="3" code="50015">Argument $styles is missing from the Docblock of \url()</error>
+      <notice line="3" code="50013">Parameter $plus could not be found in \url()</notice>
+      <error line="18" code="50014">Name of argument $get_variables does not match with the DocBlock's name $plus in \linkReturn()</error>
+      <notice line="18" code="50013">Parameter $plus could not be found in \linkReturn()</notice>
+      <error line="40" code="50015">Argument $get_variables is missing from the Docblock of \urlBuild()</error>
+    </parse_markers>
+  </file>
+  <file path="system/components/auth.php" hash="538dfcfb71326df3c362b3756be65cdb" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>auth</name>
+      <full_name>\auth</full_name>
+      <property final="false" static="false" visibility="protected" line="5" namespace="global" package="Default">
+        <name>$field</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="6" namespace="global" package="Default">
+        <name>$user_type</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="7" namespace="global" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="8" namespace="global" package="Default">
+        <name>$last_name</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="9" namespace="global" package="Default">
+        <name>$data</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="10" namespace="global" package="Default">
+        <name>$logged_user_id</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="12" namespace="global" package="Default">
+        <name>$login_errors</name>
+        <default><![CDATA[array()]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="14" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="19" package="Default">
+        <name>validateLogin</name>
+        <full_name>validateLogin</full_name>
+        <argument line="19">
+          <name>$field</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="19">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="19">
+          <name>$user_type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="28" package="Default">
+        <name>login</name>
+        <full_name>login</full_name>
+        <argument line="28">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$user_type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$success_page</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="28">
+          <name>$failure_page</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="44" package="Default">
+        <name>logout</name>
+        <full_name>logout</full_name>
+        <argument line="44">
+          <name>$user_type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$logout_page</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="58" package="Default">
+        <name>authorize</name>
+        <full_name>authorize</full_name>
+        <argument line="58">
+          <name>$user_type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="58">
+          <name>$failure_page</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="67" package="Default">
+        <name>checkAuth</name>
+        <full_name>checkAuth</full_name>
+        <argument line="67">
+          <name>$user_type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="77" package="Default">
+        <name>addError</name>
+        <full_name>addError</full_name>
+        <argument line="77">
+          <name>$field_name</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+        <argument line="77">
+          <name>$field_value</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+        <argument line="77">
+          <name>$error_text</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/components/auth.php</error>
+      <error line="3" code="50000">No DocBlock was found for \auth</error>
+      <error line="5" code="50018">No DocBlock was found for property $field</error>
+      <error line="6" code="50018">No DocBlock was found for property $user_type</error>
+      <error line="7" code="50018">No DocBlock was found for property $name</error>
+      <error line="8" code="50018">No DocBlock was found for property $last_name</error>
+      <error line="9" code="50018">No DocBlock was found for property $data</error>
+      <error line="10" code="50018">No DocBlock was found for property $logged_user_id</error>
+      <error line="12" code="50018">No DocBlock was found for property $login_errors</error>
+      <error line="14" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="19" code="50010">No DocBlock was found for method validateLogin()</error>
+      <error line="28" code="50010">No DocBlock was found for method login()</error>
+      <error line="44" code="50010">No DocBlock was found for method logout()</error>
+      <error line="58" code="50010">No DocBlock was found for method authorize()</error>
+      <error line="67" code="50010">No DocBlock was found for method checkAuth()</error>
+      <error line="77" code="50010">No DocBlock was found for method addError()</error>
+    </parse_markers>
+  </file>
+  <file path="system/components/FormValidator.php" hash="f671ab3bc47ff50b51a798a765e26a36" package="Default">
+    <constant namespace="global" line="43" package="Default">
+      <name>E_VAL_REQUIRED_VALUE</name>
+      <full_name>\E_VAL_REQUIRED_VALUE</full_name>
+      <value><![CDATA["Please enter the value for %s"]]></value>
+      <docblock line="42">
+        <description><![CDATA[Default error messages]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+    </constant>
+    <constant namespace="global" line="44" package="Default">
+      <name>E_VAL_MAXLEN_EXCEEDED</name>
+      <full_name>\E_VAL_MAXLEN_EXCEEDED</full_name>
+      <value><![CDATA["Maximum length exceeded for %s."]]></value>
+    </constant>
+    <constant namespace="global" line="45" package="Default">
+      <name>E_VAL_MINLEN_CHECK_FAILED</name>
+      <full_name>\E_VAL_MINLEN_CHECK_FAILED</full_name>
+      <value><![CDATA["Please enter input with length more than %d for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="46" package="Default">
+      <name>E_VAL_ALNUM_CHECK_FAILED</name>
+      <full_name>\E_VAL_ALNUM_CHECK_FAILED</full_name>
+      <value><![CDATA["Please provide an alpha-numeric input for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="47" package="Default">
+      <name>E_VAL_ALNUM_S_CHECK_FAILED</name>
+      <full_name>\E_VAL_ALNUM_S_CHECK_FAILED</full_name>
+      <value><![CDATA["Please provide an alpha-numeric input for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="48" package="Default">
+      <name>E_VAL_NUM_CHECK_FAILED</name>
+      <full_name>\E_VAL_NUM_CHECK_FAILED</full_name>
+      <value><![CDATA["Please provide numeric input for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="49" package="Default">
+      <name>E_VAL_ALPHA_CHECK_FAILED</name>
+      <full_name>\E_VAL_ALPHA_CHECK_FAILED</full_name>
+      <value><![CDATA["Please provide alphabetic input for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="50" package="Default">
+      <name>E_VAL_ALPHA_S_CHECK_FAILED</name>
+      <full_name>\E_VAL_ALPHA_S_CHECK_FAILED</full_name>
+      <value><![CDATA["Please provide alphabetic input for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="51" package="Default">
+      <name>E_VAL_EMAIL_CHECK_FAILED</name>
+      <full_name>\E_VAL_EMAIL_CHECK_FAILED</full_name>
+      <value><![CDATA["Please provide a valid email address"]]></value>
+    </constant>
+    <constant namespace="global" line="52" package="Default">
+      <name>E_VAL_URL_CHECK_FAILED</name>
+      <full_name>\E_VAL_URL_CHECK_FAILED</full_name>
+      <value><![CDATA["Please provide a valid url address"]]></value>
+    </constant>
+    <constant namespace="global" line="53" package="Default">
+      <name>E_VAL_LESSTHAN_CHECK_FAILED</name>
+      <full_name>\E_VAL_LESSTHAN_CHECK_FAILED</full_name>
+      <value><![CDATA["Enter a value less than %f for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="54" package="Default">
+      <name>E_VAL_GREATERTHAN_CHECK_FAILED</name>
+      <full_name>\E_VAL_GREATERTHAN_CHECK_FAILED</full_name>
+      <value><![CDATA["Enter a value greater than %f for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="55" package="Default">
+      <name>E_VAL_REGEXP_CHECK_FAILED</name>
+      <full_name>\E_VAL_REGEXP_CHECK_FAILED</full_name>
+      <value><![CDATA["Please provide a valid input for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="56" package="Default">
+      <name>E_VAL_DONTSEL_CHECK_FAILED</name>
+      <full_name>\E_VAL_DONTSEL_CHECK_FAILED</full_name>
+      <value><![CDATA["Wrong option selected for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="57" package="Default">
+      <name>E_VAL_SELMIN_CHECK_FAILED</name>
+      <full_name>\E_VAL_SELMIN_CHECK_FAILED</full_name>
+      <value><![CDATA["Please select minimum %d options for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="58" package="Default">
+      <name>E_VAL_SELONE_CHECK_FAILED</name>
+      <full_name>\E_VAL_SELONE_CHECK_FAILED</full_name>
+      <value><![CDATA["Please select an option for %s"]]></value>
+    </constant>
+    <constant namespace="global" line="59" package="Default">
+      <name>E_VAL_EQELMNT_CHECK_FAILED</name>
+      <full_name>\E_VAL_EQELMNT_CHECK_FAILED</full_name>
+      <value><![CDATA["Value of %s should be same as that of %s"]]></value>
+    </constant>
+    <constant namespace="global" line="60" package="Default">
+      <name>E_VAL_NEELMNT_CHECK_FAILED</name>
+      <full_name>\E_VAL_NEELMNT_CHECK_FAILED</full_name>
+      <value><![CDATA["Value of %s should not be same as that of %s"]]></value>
+    </constant>
+    <class final="false" abstract="false" namespace="global" line="24" package="Default">
+      <extends/>
+      <name>ValidatorObj</name>
+      <full_name>\ValidatorObj</full_name>
+      <docblock line="21">
+        <description><![CDATA[Carries information about each of the form validations]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="26" namespace="global" package="Default">
+        <name>$variable_name</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="27" namespace="global" package="Default">
+        <name>$validator_string</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="28" namespace="global" package="Default">
+        <name>$error_string</name>
+        <default><![CDATA[]]></default>
+      </property>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="34" package="Default">
+      <extends/>
+      <name>CustomValidator</name>
+      <full_name>\CustomValidator</full_name>
+      <docblock line="31">
+        <description><![CDATA[Base class for custom validation objects]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Default">
+        <name>DoValidate</name>
+        <full_name>DoValidate</full_name>
+        <argument line="36">
+          <name>$formars</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="36">
+          <name>$error_hash</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="67" package="Default">
+      <extends/>
+      <name>FormValidator</name>
+      <full_name>\FormValidator</full_name>
+      <docblock line="64">
+        <description><![CDATA[FormValidator: The main class that does all the form validations]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="69" namespace="global" package="Default">
+        <name>$validator_array</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="70" namespace="global" package="Default">
+        <name>$error_hash</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="71" namespace="global" package="Default">
+        <name>$custom_validators</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="73" package="Default">
+        <name>FormValidator</name>
+        <full_name>FormValidator</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="Default">
+        <name>AddCustomValidator</name>
+        <full_name>AddCustomValidator</full_name>
+        <argument line="80">
+          <name>$customv</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="85" package="Default">
+        <name>addValidation</name>
+        <full_name>addValidation</full_name>
+        <argument line="85">
+          <name>$variable</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="85">
+          <name>$validator</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="85">
+          <name>$error</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="93" package="Default">
+        <name>GetErrors</name>
+        <full_name>GetErrors</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="98" package="Default">
+        <name>printErrors</name>
+        <full_name>printErrors</full_name>
+        <argument line="98">
+          <name>$plus_class</name>
+          <default><![CDATA[""]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="103" package="Default">
+        <name>returnErrors</name>
+        <full_name>returnErrors</full_name>
+        <argument line="103">
+          <name>$plus_class</name>
+          <default><![CDATA[""]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="117" package="Default">
+        <name>ValidateForm</name>
+        <full_name>ValidateForm</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="160" package="Default">
+        <name>ValidateObject</name>
+        <full_name>ValidateObject</full_name>
+        <argument line="160">
+          <name>$validatorobj</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="160">
+          <name>$formvariables</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="160">
+          <name>$error_string</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="204" package="Default">
+        <name>validate_req</name>
+        <full_name>validate_req</full_name>
+        <argument line="204">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="204">
+          <name>$default_error_message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="204">
+          <name>$variable_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="216" package="Default">
+        <name>validate_maxlen</name>
+        <full_name>validate_maxlen</full_name>
+        <argument line="216">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="216">
+          <name>$max_len</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="216">
+          <name>$variable_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="216">
+          <name>$default_error_message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="231" package="Default">
+        <name>validate_minlen</name>
+        <full_name>validate_minlen</full_name>
+        <argument line="231">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="231">
+          <name>$min_len</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="231">
+          <name>$variable_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="231">
+          <name>$default_error_message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="246" package="Default">
+        <name>test_datatype</name>
+        <full_name>test_datatype</full_name>
+        <argument line="246">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="246">
+          <name>$reg_exp</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="255" package="Default">
+        <name>validate_email</name>
+        <full_name>validate_email</full_name>
+        <argument line="255">
+          <name>$email</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="260" package="Default">
+        <name>validate_url</name>
+        <full_name>validate_url</full_name>
+        <argument line="260">
+          <name>$url</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="265" package="Default">
+        <name>validate_for_numeric_input</name>
+        <full_name>validate_for_numeric_input</full_name>
+        <argument line="265">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="265">
+          <name>$validation_success</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="286" package="Default">
+        <name>validate_lessthan</name>
+        <full_name>validate_lessthan</full_name>
+        <argument line="286">
+          <name>$command_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="286">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="287">
+          <name>$variable_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="287">
+          <name>$default_error_message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="310" package="Default">
+        <name>validate_greaterthan</name>
+        <full_name>validate_greaterthan</full_name>
+        <argument line="310">
+          <name>$command_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="310">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="310">
+          <name>$variable_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="310">
+          <name>$default_error_message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="332" package="Default">
+        <name>validate_select</name>
+        <full_name>validate_select</full_name>
+        <argument line="332">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="332">
+          <name>$command_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="332">
+          <name>$default_error_message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="332">
+          <name>$variable_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="361" package="Default">
+        <name>validate_dontselect</name>
+        <full_name>validate_dontselect</full_name>
+        <argument line="361">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="361">
+          <name>$command_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="361">
+          <name>$default_error_message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="361">
+          <name>$variable_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="389" package="Default">
+        <name>ValidateCommand</name>
+        <full_name>ValidateCommand</full_name>
+        <argument line="389">
+          <name>$command</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="389">
+          <name>$command_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="389">
+          <name>$input_value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="389">
+          <name>$default_error_message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="389">
+          <name>$variable_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="389">
+          <name>$formvariables</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/components/FormValidator.php</error>
+      <error line="26" code="50018">No DocBlock was found for property $variable_name</error>
+      <error line="27" code="50018">No DocBlock was found for property $validator_string</error>
+      <error line="28" code="50018">No DocBlock was found for property $error_string</error>
+      <error line="36" code="50010">No DocBlock was found for method DoValidate()</error>
+      <error line="69" code="50018">No DocBlock was found for property $validator_array</error>
+      <error line="70" code="50018">No DocBlock was found for property $error_hash</error>
+      <error line="71" code="50018">No DocBlock was found for property $custom_validators</error>
+      <error line="73" code="50010">No DocBlock was found for method FormValidator()</error>
+      <error line="80" code="50010">No DocBlock was found for method AddCustomValidator()</error>
+      <error line="85" code="50010">No DocBlock was found for method addValidation()</error>
+      <error line="93" code="50010">No DocBlock was found for method GetErrors()</error>
+      <error line="98" code="50010">No DocBlock was found for method printErrors()</error>
+      <error line="103" code="50010">No DocBlock was found for method returnErrors()</error>
+      <error line="117" code="50010">No DocBlock was found for method ValidateForm()</error>
+      <error line="160" code="50010">No DocBlock was found for method ValidateObject()</error>
+      <error line="204" code="50010">No DocBlock was found for method validate_req()</error>
+      <error line="216" code="50010">No DocBlock was found for method validate_maxlen()</error>
+      <error line="231" code="50010">No DocBlock was found for method validate_minlen()</error>
+      <error line="246" code="50010">No DocBlock was found for method test_datatype()</error>
+      <error line="255" code="50010">No DocBlock was found for method validate_email()</error>
+      <error line="260" code="50010">No DocBlock was found for method validate_url()</error>
+      <error line="265" code="50010">No DocBlock was found for method validate_for_numeric_input()</error>
+      <error line="286" code="50010">No DocBlock was found for method validate_lessthan()</error>
+      <error line="310" code="50010">No DocBlock was found for method validate_greaterthan()</error>
+      <error line="332" code="50010">No DocBlock was found for method validate_select()</error>
+      <error line="361" code="50010">No DocBlock was found for method validate_dontselect()</error>
+      <error line="389" code="50010">No DocBlock was found for method ValidateCommand()</error>
+    </parse_markers>
+  </file>
+  <file path="system/components/photo.php" hash="e799379ef14e9abb439eb773c96a3d31" package="Default">
+    <class final="false" abstract="false" namespace="global" line="2" package="Default">
+      <extends>\Controller</extends>
+      <name>photo</name>
+      <full_name>\photo</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>load</name>
+        <full_name>load</full_name>
+        <argument line="10">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/components/photo.php</error>
+      <error line="2" code="50000">No DocBlock was found for \photo</error>
+      <error line="4" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="10" code="50010">No DocBlock was found for method load()</error>
+    </parse_markers>
+  </file>
+  <file path="system/components/comments.php" hash="c1be755310b97e19b0fb03466085c944" package="Default">
+    <class final="false" abstract="false" namespace="global" line="10" package="Default">
+      <extends>\Controller</extends>
+      <name>comments</name>
+      <full_name>\comments</full_name>
+      <docblock line="2">
+        <description><![CDATA[Enter description here .]]></description>
+        <long-description><![CDATA[<p>..</p>]]></long-description>
+        <tag line="2" name="property" description="" type="\comment_model" variable="$comment_model">
+          <type by_reference="false">\comment_model</type>
+        </tag>
+        <tag line="2" name="property" description="" type="\FormValidator" variable="$FormValidator">
+          <type by_reference="false">\FormValidator</type>
+        </tag>
+        <tag line="2" name="author" description="Goran Despotoski"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="12" namespace="global" package="Default">
+        <name>$comment_type</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="13" namespace="global" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="14" namespace="global" package="Default">
+        <name>$controller</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="15" namespace="global" package="Default">
+        <name>$action</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Default">
+        <name>load</name>
+        <full_name>load</full_name>
+        <argument line="24">
+          <name>$comment_type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$controller</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$action</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="24">
+          <name>$is_logged_in</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="47" package="Default">
+        <name>showComments</name>
+        <full_name>showComments</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="69" package="Default">
+        <name>showCommentForm</name>
+        <full_name>showCommentForm</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="84" package="Default">
+        <name>leaveComment</name>
+        <full_name>leaveComment</full_name>
+        <argument line="84">
+          <name>$user_id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="84">
+          <name>$comment_text</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="103" package="Default">
+        <name>loadAdmin</name>
+        <full_name>loadAdmin</full_name>
+        <argument line="103">
+          <name>$comment_type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="103">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="103">
+          <name>$controller</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="103">
+          <name>$action</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="103">
+          <name>$is_logged_in</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="125" package="Default">
+        <name>showAdminComments</name>
+        <full_name>showAdminComments</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/components/comments.php</error>
+      <error line="12" code="50018">No DocBlock was found for property $comment_type</error>
+      <error line="13" code="50018">No DocBlock was found for property $id</error>
+      <error line="14" code="50018">No DocBlock was found for property $controller</error>
+      <error line="15" code="50018">No DocBlock was found for property $action</error>
+      <error line="17" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="24" code="50010">No DocBlock was found for method load()</error>
+      <error line="47" code="50010">No DocBlock was found for method showComments()</error>
+      <error line="69" code="50010">No DocBlock was found for method showCommentForm()</error>
+      <error line="84" code="50010">No DocBlock was found for method leaveComment()</error>
+      <error line="103" code="50010">No DocBlock was found for method loadAdmin()</error>
+      <error line="125" code="50010">No DocBlock was found for method showAdminComments()</error>
+    </parse_markers>
+  </file>
+  <file path="system/components/SimpleImage.php" hash="fdd9639c708777891c41ebe6969f9a5c" package="Default">
+    <class final="false" abstract="false" namespace="global" line="22" package="Default">
+      <extends/>
+      <name>SimpleImage</name>
+      <full_name>\SimpleImage</full_name>
+      <property final="false" static="false" visibility="public" line="24" namespace="global" package="Default">
+        <name>$image</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="public" line="25" namespace="global" package="Default">
+        <name>$image_type</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="Default">
+        <name>load</name>
+        <full_name>load</full_name>
+        <argument line="27">
+          <name>$filename</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="Default">
+        <name>save</name>
+        <full_name>save</full_name>
+        <argument line="38">
+          <name>$filename</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="38">
+          <name>$image_type</name>
+          <default><![CDATA[IMAGETYPE_JPEG]]></default>
+          <type/>
+        </argument>
+        <argument line="38">
+          <name>$compression</name>
+          <default><![CDATA[75]]></default>
+          <type/>
+        </argument>
+        <argument line="38">
+          <name>$permissions</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="50" package="Default">
+        <name>output</name>
+        <full_name>output</full_name>
+        <argument line="50">
+          <name>$image_type</name>
+          <default><![CDATA[IMAGETYPE_JPEG]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="59" package="Default">
+        <name>getWidth</name>
+        <full_name>getWidth</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="62" package="Default">
+        <name>getHeight</name>
+        <full_name>getHeight</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="65" package="Default">
+        <name>resizeToHeight</name>
+        <full_name>resizeToHeight</full_name>
+        <argument line="65">
+          <name>$height</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="70" package="Default">
+        <name>resizeToWidth</name>
+        <full_name>resizeToWidth</full_name>
+        <argument line="70">
+          <name>$width</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="75" package="Default">
+        <name>scale</name>
+        <full_name>scale</full_name>
+        <argument line="75">
+          <name>$scale</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="Default">
+        <name>resize</name>
+        <full_name>resize</full_name>
+        <argument line="80">
+          <name>$width</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="80">
+          <name>$height</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file system/components/SimpleImage.php</error>
+      <error line="22" code="50000">No DocBlock was found for \SimpleImage</error>
+      <error line="24" code="50018">No DocBlock was found for property $image</error>
+      <error line="25" code="50018">No DocBlock was found for property $image_type</error>
+      <error line="27" code="50010">No DocBlock was found for method load()</error>
+      <error line="38" code="50010">No DocBlock was found for method save()</error>
+      <error line="50" code="50010">No DocBlock was found for method output()</error>
+      <error line="59" code="50010">No DocBlock was found for method getWidth()</error>
+      <error line="62" code="50010">No DocBlock was found for method getHeight()</error>
+      <error line="65" code="50010">No DocBlock was found for method resizeToHeight()</error>
+      <error line="70" code="50010">No DocBlock was found for method resizeToWidth()</error>
+      <error line="75" code="50010">No DocBlock was found for method scale()</error>
+      <error line="80" code="50010">No DocBlock was found for method resize()</error>
+    </parse_markers>
+  </file>
+  <file path="index.php" hash="db26caabe636452a5794c5fcf16733a1" package="Default">
+    <include line="6" type="Require Once" package="Default">
+      <name>system/base/error_handler.php</name>
+    </include>
+    <include line="8" type="Require Once" package="Default">
+      <name>system/base/GlobalRegistry.php</name>
+    </include>
+    <include line="9" type="Require Once" package="Default">
+      <name>application/config/config.php</name>
+    </include>
+    <include line="11" type="Require Once" package="Default">
+      <name>system/base/DataAccess.php</name>
+    </include>
+    <include line="12" type="Require Once" package="Default">
+      <name>system/base/controller.php</name>
+    </include>
+    <include line="13" type="Require Once" package="Default">
+      <name>system/base/model.php</name>
+    </include>
+    <include line="14" type="Require Once" package="Default">
+      <name>system/base/dispatcher.php</name>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file index.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/model/tests_model.php" hash="451980c4e4f48453969e48feee60852b" package="Default">
+    <class final="false" abstract="false" namespace="global" line="5" package="Default">
+      <extends>\Model</extends>
+      <name>tests_model</name>
+      <full_name>\tests_model</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="7" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/model/tests_model.php</error>
+      <error line="5" code="50000">No DocBlock was found for \tests_model</error>
+      <error line="7" code="50010">No DocBlock was found for method __construct()</error>
+    </parse_markers>
+  </file>
+  <file path="application/controller/main.php" hash="a98c8fbfbb6484a0ea5b600cfe17d1af" package="Default">
+    <class final="false" abstract="false" namespace="global" line="9" package="Default">
+      <extends>\Controller</extends>
+      <name>main</name>
+      <full_name>\main</full_name>
+      <docblock line="3">
+        <description><![CDATA[]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="property" description="" type="\tests_model" variable="$tests_model">
+          <type by_reference="false">\tests_model</type>
+        </tag>
+        <tag line="3" name="author" description="goran"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="Default">
+        <name>index</name>
+        <full_name>index</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/controller/main.php</error>
+      <critical line="3" code="50005">No short description for class \main</critical>
+      <error line="11" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="17" code="50010">No DocBlock was found for method index()</error>
+    </parse_markers>
+  </file>
+  <file path="application/config/config.php" hash="d5666ed5555ec55a2c183d2ae734d1ae" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/config/config.php</error>
+    </parse_markers>
+  </file>
+  <file path="application/view/test.php" hash="fd7601d1097c2d7a67f069cf707337df" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file application/view/test.php</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="system" full_name="system">
+    <package name="data-handling" full_name="system\data-handling"/>
+    <package name="error-handling" full_name="system\error-handling"/>
+    <package name="request-handling" full_name="system\request-handling"/>
+  </package>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

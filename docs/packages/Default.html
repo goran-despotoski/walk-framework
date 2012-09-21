@@ -1,0 +1,625 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » Default</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/system.html"><i class="icon-folder-open"></i> system</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">153</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/Default.html" title="Default"><i class="icon-folder-open"></i>Default</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-function"></i> Functions</li>
+<li class="function  "><a href="#ShowAdminPaging" title="ShowAdminPaging :: "><span class="description">ShowAdminPaging()
+        </span><pre>ShowAdminPaging</pre></a></li>
+<li class="function  "><a href="#ShowPublicPaging" title="ShowPublicPaging :: "><span class="description">ShowPublicPaging()
+        </span><pre>ShowPublicPaging</pre></a></li>
+<li class="function  "><a href="#cleanOutput" title="cleanOutput :: "><span class="description">cleanOutput()
+        </span><pre>cleanOutput</pre></a></li>
+<li class="function  "><a href="#form_checkbox" title="form_checkbox :: "><span class="description">form_checkbox()
+        </span><pre>form_checkbox</pre></a></li>
+<li class="function  "><a href="#form_end" title="form_end :: "><span class="description">form_end()
+        </span><pre>form_end</pre></a></li>
+<li class="function  "><a href="#form_passbox" title="form_passbox :: "><span class="description">form_passbox()
+        </span><pre>form_passbox</pre></a></li>
+<li class="function  "><a href="#form_start" title="form_start :: "><span class="description">form_start()
+        </span><pre>form_start</pre></a></li>
+<li class="function  "><a href="#form_submit" title="form_submit :: "><span class="description">form_submit()
+        </span><pre>form_submit</pre></a></li>
+<li class="function  "><a href="#form_textarea" title="form_textarea :: "><span class="description">form_textarea()
+        </span><pre>form_textarea</pre></a></li>
+<li class="function  "><a href="#form_textbox" title="form_textbox :: "><span class="description">form_textbox()
+        </span><pre>form_textbox</pre></a></li>
+<li class="function  "><a href="#linkReturn" title="linkReturn :: Builds a link with given"><span class="description">Builds a link with given</span><pre>linkReturn</pre></a></li>
+<li class="function  "><a href="#redirect" title="redirect :: Short for die(header()) syntax"><span class="description">Short for die(header()) syntax</span><pre>redirect</pre></a></li>
+<li class="function  "><a href="#showSuccessMessage" title="showSuccessMessage :: "><span class="description">showSuccessMessage()
+        </span><pre>showSuccessMessage</pre></a></li>
+<li class="function  "><a href="#standardTime" title="standardTime :: "><span class="description">standardTime()
+        </span><pre>standardTime</pre></a></li>
+<li class="function  "><a href="#truncateText" title="truncateText :: Truncates the text with wanted size, break characted and adds pad, returns the same string when size is less than $limit"><span class="description">Truncates the text with wanted size, break characted and adds pad, returns the same string when size is less than $limit</span><pre>truncateText</pre></a></li>
+<li class="function  "><a href="#url" title="url :: Creates a HTML url from given parameters(userfriendly if GlobalRegistry::userFriendlyUrls is true, or nonuserfriendly urls
+if it is false)"><span class="description">Creates a HTML url from given parameters(userfriendly if GlobalRegistry::userFriendlyUrls is true, or nonuserfriendly urls
+if it is false)</span><pre>url</pre></a></li>
+<li class="function  "><a href="#urlBuild" title="urlBuild :: Builds and returns the url for the given controller, action and arguments(array)"><span class="description">Builds and returns the url for the given controller, action and arguments(array)</span><pre>urlBuild</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#DataAccessResult" title="Provides interface for most common methods for result manipulation">DataAccessResult</a></li>
+<li><a href="#Dao" title="Provides basic methods for executing update/insert commands and retrieving from select commands">Dao</a></li>
+<li><a href="#auth" title="">auth</a></li>
+<li><a href="#ValidatorObj" title="Carries information about each of the form validations">ValidatorObj</a></li>
+<li><a href="#CustomValidator" title="Base class for custom validation objects">CustomValidator</a></li>
+<li><a href="#FormValidator" title="FormValidator: The main class that does all the form validations">FormValidator</a></li>
+<li><a href="#photo" title="Controller class">photo</a></li>
+<li><a href="#comments" title="Enter description here .">comments</a></li>
+<li><a href="#SimpleImage" title="">SimpleImage</a></li>
+<li><a href="#tests_model" title="This class is an added layer for simpler usage in concrete models">tests_model</a></li>
+<li><a href="#main" title="Controller class">main</a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#E_VAL_ALNUM_CHECK_FAILED" title="E_VAL_ALNUM_CHECK_FAILED :: "><span class="description">E_VAL_ALNUM_CHECK_FAILED</span><pre>E_VAL_ALNUM_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_ALNUM_S_CHECK_FAILED" title="E_VAL_ALNUM_S_CHECK_FAILED :: "><span class="description">E_VAL_ALNUM_S_CHECK_FAILED</span><pre>E_VAL_ALNUM_S_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_ALPHA_CHECK_FAILED" title="E_VAL_ALPHA_CHECK_FAILED :: "><span class="description">E_VAL_ALPHA_CHECK_FAILED</span><pre>E_VAL_ALPHA_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_ALPHA_S_CHECK_FAILED" title="E_VAL_ALPHA_S_CHECK_FAILED :: "><span class="description">E_VAL_ALPHA_S_CHECK_FAILED</span><pre>E_VAL_ALPHA_S_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_DONTSEL_CHECK_FAILED" title="E_VAL_DONTSEL_CHECK_FAILED :: "><span class="description">E_VAL_DONTSEL_CHECK_FAILED</span><pre>E_VAL_DONTSEL_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_EMAIL_CHECK_FAILED" title="E_VAL_EMAIL_CHECK_FAILED :: "><span class="description">E_VAL_EMAIL_CHECK_FAILED</span><pre>E_VAL_EMAIL_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_EQELMNT_CHECK_FAILED" title="E_VAL_EQELMNT_CHECK_FAILED :: "><span class="description">E_VAL_EQELMNT_CHECK_FAILED</span><pre>E_VAL_EQELMNT_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_GREATERTHAN_CHECK_FAILED" title="E_VAL_GREATERTHAN_CHECK_FAILED :: "><span class="description">E_VAL_GREATERTHAN_CHECK_FAILED</span><pre>E_VAL_GREATERTHAN_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_LESSTHAN_CHECK_FAILED" title="E_VAL_LESSTHAN_CHECK_FAILED :: "><span class="description">E_VAL_LESSTHAN_CHECK_FAILED</span><pre>E_VAL_LESSTHAN_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_MAXLEN_EXCEEDED" title="E_VAL_MAXLEN_EXCEEDED :: "><span class="description">E_VAL_MAXLEN_EXCEEDED</span><pre>E_VAL_MAXLEN_EXCEEDED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_MINLEN_CHECK_FAILED" title="E_VAL_MINLEN_CHECK_FAILED :: "><span class="description">E_VAL_MINLEN_CHECK_FAILED</span><pre>E_VAL_MINLEN_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_NEELMNT_CHECK_FAILED" title="E_VAL_NEELMNT_CHECK_FAILED :: "><span class="description">E_VAL_NEELMNT_CHECK_FAILED</span><pre>E_VAL_NEELMNT_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_NUM_CHECK_FAILED" title="E_VAL_NUM_CHECK_FAILED :: "><span class="description">E_VAL_NUM_CHECK_FAILED</span><pre>E_VAL_NUM_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_REGEXP_CHECK_FAILED" title="E_VAL_REGEXP_CHECK_FAILED :: "><span class="description">E_VAL_REGEXP_CHECK_FAILED</span><pre>E_VAL_REGEXP_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_REQUIRED_VALUE" title="E_VAL_REQUIRED_VALUE :: Default error messages"><span class="description">Default error messages</span><pre>E_VAL_REQUIRED_VALUE</pre></a></li>
+<li class="constant  "><a href="#E_VAL_SELMIN_CHECK_FAILED" title="E_VAL_SELMIN_CHECK_FAILED :: "><span class="description">E_VAL_SELMIN_CHECK_FAILED</span><pre>E_VAL_SELMIN_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_SELONE_CHECK_FAILED" title="E_VAL_SELONE_CHECK_FAILED :: "><span class="description">E_VAL_SELONE_CHECK_FAILED</span><pre>E_VAL_SELONE_CHECK_FAILED</pre></a></li>
+<li class="constant  "><a href="#E_VAL_URL_CHECK_FAILED" title="E_VAL_URL_CHECK_FAILED :: "><span class="description">E_VAL_URL_CHECK_FAILED</span><pre>E_VAL_URL_CHECK_FAILED</pre></a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span>
+</li>
+<li class="active"><a href="../packages/Default.html">Default</a></li>
+</ul>
+<div class="package-indent">
+<h3>
+<i class="icon-custom icon-function"></i> Functions</h3>
+<a name="ShowAdminPaging" id="ShowAdminPaging"></a><div class="element clickable function  ShowAdminPaging" data-toggle="collapse" data-target=".ShowAdminPaging .collapse">
+<h2>ShowAdminPaging()
+        </h2>
+<pre>ShowAdminPaging($prefix_array) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$prefix_array</h4></div>
+</div></div>
+</div>
+<a name="ShowPublicPaging" id="ShowPublicPaging"></a><div class="element clickable function  ShowPublicPaging" data-toggle="collapse" data-target=".ShowPublicPaging .collapse">
+<h2>ShowPublicPaging()
+        </h2>
+<pre>ShowPublicPaging($prefix_array) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$prefix_array</h4></div>
+</div></div>
+</div>
+<a name="cleanOutput" id="cleanOutput"></a><div class="element clickable function  cleanOutput" data-toggle="collapse" data-target=".cleanOutput .collapse">
+<h2>cleanOutput()
+        </h2>
+<pre>cleanOutput($variable) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$variable</h4></div>
+</div></div>
+</div>
+<a name="form_checkbox" id="form_checkbox"></a><div class="element clickable function  form_checkbox" data-toggle="collapse" data-target=".form_checkbox .collapse">
+<h2>form_checkbox()
+        </h2>
+<pre>form_checkbox($name, $value, $class, $id, $misc) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$class</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument"><h4>$misc</h4></div>
+</div></div>
+</div>
+<a name="form_end" id="form_end"></a><div class="element clickable function  form_end" data-toggle="collapse" data-target=".form_end .collapse">
+<h2>form_end()
+        </h2>
+<pre>form_end() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="form_passbox" id="form_passbox"></a><div class="element clickable function  form_passbox" data-toggle="collapse" data-target=".form_passbox .collapse">
+<h2>form_passbox()
+        </h2>
+<pre>form_passbox($name, $value, $class, $id, $misc) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$class</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument"><h4>$misc</h4></div>
+</div></div>
+</div>
+<a name="form_start" id="form_start"></a><div class="element clickable function  form_start" data-toggle="collapse" data-target=".form_start .collapse">
+<h2>form_start()
+        </h2>
+<pre>form_start($method, $action, $name, $misc) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$method</h4></div>
+<div class="subelement argument"><h4>$action</h4></div>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$misc</h4></div>
+</div></div>
+</div>
+<a name="form_submit" id="form_submit"></a><div class="element clickable function  form_submit" data-toggle="collapse" data-target=".form_submit .collapse">
+<h2>form_submit()
+        </h2>
+<pre>form_submit($name, $value, $class, $id, $misc) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$class</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument"><h4>$misc</h4></div>
+</div></div>
+</div>
+<a name="form_textarea" id="form_textarea"></a><div class="element clickable function  form_textarea" data-toggle="collapse" data-target=".form_textarea .collapse">
+<h2>form_textarea()
+        </h2>
+<pre>form_textarea($name, $value, $class, $id, $misc) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$class</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument"><h4>$misc</h4></div>
+</div></div>
+</div>
+<a name="form_textbox" id="form_textbox"></a><div class="element clickable function  form_textbox" data-toggle="collapse" data-target=".form_textbox .collapse">
+<h2>form_textbox()
+        </h2>
+<pre>form_textbox($name, $value, $class, $id, $misc) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$class</h4></div>
+<div class="subelement argument"><h4>$id</h4></div>
+<div class="subelement argument"><h4>$misc</h4></div>
+</div></div>
+</div>
+<a name="linkReturn" id="linkReturn"></a><div class="element clickable function  linkReturn" data-toggle="collapse" data-target=".linkReturn .collapse">
+<h2>Builds a link with given</h2>
+<pre>linkReturn(string $controller, string $action, string $title, array $arguments, $get_variables, string $class, string $styles) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$controller</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>array</code>
+</div>
+<div class="subelement argument"><h4>$get_variables</h4></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$styles</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="redirect" id="redirect"></a><div class="element clickable function  redirect" data-toggle="collapse" data-target=".redirect .collapse">
+<h2>Short for die(header()) syntax</h2>
+<pre>redirect(string $where) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$where</h4>
+<code>string</code><p>Url to redirect to</p></div>
+</div></div>
+</div>
+<a name="showSuccessMessage" id="showSuccessMessage"></a><div class="element clickable function  showSuccessMessage" data-toggle="collapse" data-target=".showSuccessMessage .collapse">
+<h2>showSuccessMessage()
+        </h2>
+<pre>showSuccessMessage($status_message) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$status_message</h4></div>
+</div></div>
+</div>
+<a name="standardTime" id="standardTime"></a><div class="element clickable function  standardTime" data-toggle="collapse" data-target=".standardTime .collapse">
+<h2>standardTime()
+        </h2>
+<pre>standardTime($time) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$time</h4></div>
+</div></div>
+</div>
+<a name="truncateText" id="truncateText"></a><div class="element clickable function  truncateText" data-toggle="collapse" data-target=".truncateText .collapse">
+<h2>Truncates the text with wanted size, break characted and adds pad, returns the same string when size is less than $limit</h2>
+<pre>truncateText(string $string, integer $limit, \character $break, string $pad) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>String to be truncated</p></div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>Length of result string</p></div>
+<div class="subelement argument">
+<h4>$break</h4>
+<code>\character</code><p>What is the end delimiter to break at</p></div>
+<div class="subelement argument">
+<h4>$pad</h4>
+<code>string</code><p>What should be shown on end of truncated string()</p>
+</div>
+</div></div>
+</div>
+<a name="url" id="url"></a><div class="element clickable function  url" data-toggle="collapse" data-target=".url .collapse">
+<h2>Creates a HTML url from given parameters(userfriendly if GlobalRegistry::userFriendlyUrls is true, or nonuserfriendly urls
+if it is false)</h2>
+<pre>url(string $controller, string $action, $title, array $arguments, $get_variables, string $class, string $styles) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$controller</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code>
+</div>
+<div class="subelement argument"><h4>$title</h4></div>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>array</code>
+</div>
+<div class="subelement argument"><h4>$get_variables</h4></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The css class</p></div>
+<div class="subelement argument">
+<h4>$styles</h4>
+<code>string</code><p>Styles</p></div>
+</div></div>
+</div>
+<a name="urlBuild" id="urlBuild"></a><div class="element clickable function  urlBuild" data-toggle="collapse" data-target=".urlBuild .collapse">
+<h2>Builds and returns the url for the given controller, action and arguments(array)</h2>
+<pre>urlBuild(string $controller, string $action, array $arguments, $get_variables) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$controller</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>array</code>
+</div>
+<div class="subelement argument"><h4>$get_variables</h4></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<a name="CustomValidator" id="CustomValidator"></a><div class="element ajax clickable class" href="../classes/CustomValidator.html">
+<h1>CustomValidator<a href="../classes/CustomValidator.html">¶</a>
+</h1>
+<p class="short_description">Base class for custom validation objects</p>
+<div class="details collapse"></div>
+<a href="../classes/CustomValidator.html" class="more">« More »</a>
+</div>
+<a name="Dao" id="Dao"></a><div class="element ajax clickable class" href="../classes/Dao.html">
+<h1>Dao<a href="../classes/Dao.html">¶</a>
+</h1>
+<p class="short_description">Provides basic methods for executing update/insert commands and retrieving from select commands</p>
+<div class="details collapse"></div>
+<a href="../classes/Dao.html" class="more">« More »</a>
+</div>
+<a name="DataAccessResult" id="DataAccessResult"></a><div class="element ajax clickable class" href="../classes/DataAccessResult.html">
+<h1>DataAccessResult<a href="../classes/DataAccessResult.html">¶</a>
+</h1>
+<p class="short_description">Provides interface for most common methods for result manipulation</p>
+<div class="details collapse"></div>
+<a href="../classes/DataAccessResult.html" class="more">« More »</a>
+</div>
+<a name="FormValidator" id="FormValidator"></a><div class="element ajax clickable class" href="../classes/FormValidator.html">
+<h1>FormValidator<a href="../classes/FormValidator.html">¶</a>
+</h1>
+<p class="short_description">FormValidator: The main class that does all the form validations</p>
+<div class="details collapse"></div>
+<a href="../classes/FormValidator.html" class="more">« More »</a>
+</div>
+<a name="SimpleImage" id="SimpleImage"></a><div class="element ajax clickable class" href="../classes/SimpleImage.html">
+<h1>SimpleImage<a href="../classes/SimpleImage.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/SimpleImage.html" class="more">« More »</a>
+</div>
+<a name="ValidatorObj" id="ValidatorObj"></a><div class="element ajax clickable class" href="../classes/ValidatorObj.html">
+<h1>ValidatorObj<a href="../classes/ValidatorObj.html">¶</a>
+</h1>
+<p class="short_description">Carries information about each of the form validations</p>
+<div class="details collapse"></div>
+<a href="../classes/ValidatorObj.html" class="more">« More »</a>
+</div>
+<a name="auth" id="auth"></a><div class="element ajax clickable class" href="../classes/auth.html">
+<h1>auth<a href="../classes/auth.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/auth.html" class="more">« More »</a>
+</div>
+<a name="comments" id="comments"></a><div class="element ajax clickable class" href="../classes/comments.html">
+<h1>comments<a href="../classes/comments.html">¶</a>
+</h1>
+<p class="short_description">Enter description here .</p>
+<div class="details collapse"></div>
+<a href="../classes/comments.html" class="more">« More »</a>
+</div>
+<a name="main" id="main"></a><div class="element ajax clickable class" href="../classes/main.html">
+<h1>main<a href="../classes/main.html">¶</a>
+</h1>
+<p class="short_description">Controller class</p>
+<div class="details collapse"></div>
+<a href="../classes/main.html" class="more">« More »</a>
+</div>
+<a name="photo" id="photo"></a><div class="element ajax clickable class" href="../classes/photo.html">
+<h1>photo<a href="../classes/photo.html">¶</a>
+</h1>
+<p class="short_description">Controller class</p>
+<div class="details collapse"></div>
+<a href="../classes/photo.html" class="more">« More »</a>
+</div>
+<a name="tests_model" id="tests_model"></a><div class="element ajax clickable class" href="../classes/tests_model.html">
+<h1>tests_model<a href="../classes/tests_model.html">¶</a>
+</h1>
+<p class="short_description">This class is an added layer for simpler usage in concrete models</p>
+<div class="details collapse"></div>
+<a href="../classes/tests_model.html" class="more">« More »</a>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="E_VAL_ALNUM_CHECK_FAILED" id="E_VAL_ALNUM_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_ALNUM_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_ALNUM_CHECK_FAILED .collapse">
+<h2>E_VAL_ALNUM_CHECK_FAILED</h2>
+<pre>E_VAL_ALNUM_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_ALNUM_S_CHECK_FAILED" id="E_VAL_ALNUM_S_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_ALNUM_S_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_ALNUM_S_CHECK_FAILED .collapse">
+<h2>E_VAL_ALNUM_S_CHECK_FAILED</h2>
+<pre>E_VAL_ALNUM_S_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_ALPHA_CHECK_FAILED" id="E_VAL_ALPHA_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_ALPHA_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_ALPHA_CHECK_FAILED .collapse">
+<h2>E_VAL_ALPHA_CHECK_FAILED</h2>
+<pre>E_VAL_ALPHA_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_ALPHA_S_CHECK_FAILED" id="E_VAL_ALPHA_S_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_ALPHA_S_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_ALPHA_S_CHECK_FAILED .collapse">
+<h2>E_VAL_ALPHA_S_CHECK_FAILED</h2>
+<pre>E_VAL_ALPHA_S_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_DONTSEL_CHECK_FAILED" id="E_VAL_DONTSEL_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_DONTSEL_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_DONTSEL_CHECK_FAILED .collapse">
+<h2>E_VAL_DONTSEL_CHECK_FAILED</h2>
+<pre>E_VAL_DONTSEL_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_EMAIL_CHECK_FAILED" id="E_VAL_EMAIL_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_EMAIL_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_EMAIL_CHECK_FAILED .collapse">
+<h2>E_VAL_EMAIL_CHECK_FAILED</h2>
+<pre>E_VAL_EMAIL_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_EQELMNT_CHECK_FAILED" id="E_VAL_EQELMNT_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_EQELMNT_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_EQELMNT_CHECK_FAILED .collapse">
+<h2>E_VAL_EQELMNT_CHECK_FAILED</h2>
+<pre>E_VAL_EQELMNT_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_GREATERTHAN_CHECK_FAILED" id="E_VAL_GREATERTHAN_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_GREATERTHAN_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_GREATERTHAN_CHECK_FAILED .collapse">
+<h2>E_VAL_GREATERTHAN_CHECK_FAILED</h2>
+<pre>E_VAL_GREATERTHAN_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_LESSTHAN_CHECK_FAILED" id="E_VAL_LESSTHAN_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_LESSTHAN_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_LESSTHAN_CHECK_FAILED .collapse">
+<h2>E_VAL_LESSTHAN_CHECK_FAILED</h2>
+<pre>E_VAL_LESSTHAN_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_MAXLEN_EXCEEDED" id="E_VAL_MAXLEN_EXCEEDED"> </a><div class="element clickable constant  E_VAL_MAXLEN_EXCEEDED" data-toggle="collapse" data-target=".E_VAL_MAXLEN_EXCEEDED .collapse">
+<h2>E_VAL_MAXLEN_EXCEEDED</h2>
+<pre>E_VAL_MAXLEN_EXCEEDED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_MINLEN_CHECK_FAILED" id="E_VAL_MINLEN_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_MINLEN_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_MINLEN_CHECK_FAILED .collapse">
+<h2>E_VAL_MINLEN_CHECK_FAILED</h2>
+<pre>E_VAL_MINLEN_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_NEELMNT_CHECK_FAILED" id="E_VAL_NEELMNT_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_NEELMNT_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_NEELMNT_CHECK_FAILED .collapse">
+<h2>E_VAL_NEELMNT_CHECK_FAILED</h2>
+<pre>E_VAL_NEELMNT_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_NUM_CHECK_FAILED" id="E_VAL_NUM_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_NUM_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_NUM_CHECK_FAILED .collapse">
+<h2>E_VAL_NUM_CHECK_FAILED</h2>
+<pre>E_VAL_NUM_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_REGEXP_CHECK_FAILED" id="E_VAL_REGEXP_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_REGEXP_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_REGEXP_CHECK_FAILED .collapse">
+<h2>E_VAL_REGEXP_CHECK_FAILED</h2>
+<pre>E_VAL_REGEXP_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_REQUIRED_VALUE" id="E_VAL_REQUIRED_VALUE"> </a><div class="element clickable constant  E_VAL_REQUIRED_VALUE" data-toggle="collapse" data-target=".E_VAL_REQUIRED_VALUE .collapse">
+<h2>Default error messages</h2>
+<pre>E_VAL_REQUIRED_VALUE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_SELMIN_CHECK_FAILED" id="E_VAL_SELMIN_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_SELMIN_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_SELMIN_CHECK_FAILED .collapse">
+<h2>E_VAL_SELMIN_CHECK_FAILED</h2>
+<pre>E_VAL_SELMIN_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_SELONE_CHECK_FAILED" id="E_VAL_SELONE_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_SELONE_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_SELONE_CHECK_FAILED .collapse">
+<h2>E_VAL_SELONE_CHECK_FAILED</h2>
+<pre>E_VAL_SELONE_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="E_VAL_URL_CHECK_FAILED" id="E_VAL_URL_CHECK_FAILED"> </a><div class="element clickable constant  E_VAL_URL_CHECK_FAILED" data-toggle="collapse" data-target=".E_VAL_URL_CHECK_FAILED .collapse">
+<h2>E_VAL_URL_CHECK_FAILED</h2>
+<pre>E_VAL_URL_CHECK_FAILED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-09-21T16:13:55+02:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \tests_model</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/system.html"><i class="icon-folder-open"></i> system</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">153</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#deleteById" title="deleteById :: Delete rows by id(you can delete multiple if you change $column to other value based on your table layout (1:m relation))"><span class="description">Delete rows by id(you can delete multiple if you change $column to other value based on your table layout (1:m relation))</span><pre>deleteById()</pre></a></li>
+<li class="method public inherited"><a href="#getAll" title="getAll :: Gets all rows in table"><span class="description">Gets all rows in table</span><pre>getAll()</pre></a></li>
+<li class="method public inherited"><a href="#getAllFiltered" title="getAllFiltered :: Gets all rows filtered"><span class="description">Gets all rows filtered</span><pre>getAllFiltered()</pre></a></li>
+<li class="method public inherited"><a href="#getAllPaged" title="getAllPaged :: "><span class="description">getAllPaged()
+        </span><pre>getAllPaged()</pre></a></li>
+<li class="method public inherited"><a href="#getAllPagedFiltered" title="getAllPagedFiltered :: "><span class="description">getAllPagedFiltered()
+        </span><pre>getAllPagedFiltered()</pre></a></li>
+<li class="method public inherited"><a href="#getById" title="getById :: Gets row by id(or whatever the key column's name is by changing $id_column value to corresponding column name)"><span class="description">Gets row by id(or whatever the key column's name is by changing $id_column value to corresponding column name)</span><pre>getById()</pre></a></li>
+<li class="method public inherited"><a href="#getLastId" title="getLastId :: "><span class="description">getLastId()
+        </span><pre>getLastId()</pre></a></li>
+<li class="method public inherited"><a href="#save" title="save :: Updates table if $key[1] is &gt; 0 and if $key[1] == 0 inserts a new row"><span class="description">Updates table if $key[1] is &gt; 0 and if $key[1] == 0 inserts a new row</span><pre>save()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#getLimitStart" title="getLimitStart :: "><span class="description">getLimitStart()
+        </span><pre>getLimitStart()</pre></a></li>
+<li class="method protected inherited"><a href="#retrieve" title="retrieve :: Executes query and returns DataAccessResult"><span class="description">Executes query and returns DataAccessResult</span><pre>retrieve()</pre></a></li>
+<li class="method protected inherited"><a href="#update" title="update :: "><span class="description">update()
+        </span><pre>update()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private inherited"><a href="#DataAccessFactory" title="DataAccessFactory :: "><span class="description">DataAccessFactory()
+        </span><pre>DataAccessFactory()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected inherited"><a href="#%24db" title="$db :: "><span class="description">$db</span><pre>$db</pre></a></li>
+<li class="property protected inherited"><a href="#%24global" title="$global :: "><span class="description">$global</span><pre>$global</pre></a></li>
+<li class="property protected inherited"><a href="#%24page_count" title="$page_count :: "><span class="description">$page_count</span><pre>$page_count</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="property private inherited"><a href="#%24da" title="$da :: "><span class="description">$da</span><pre>$da</pre></a></li>
+<li class="property private inherited"><a href="#%24sql" title="$sql :: "><span class="description">$sql</span><pre>$sql</pre></a></li>
+<li class="property private inherited"><a href="#%24table_name" title="$table_name :: "><span class="description">$table_name</span><pre>$table_name</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5Ctests_model" id="\tests_model"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/tests_model.html">tests_model</a>
+</li>
+</ul>
+<div href="../classes/tests_model.html" class="element class">
+<p class="short_description">This class is an added layer for simpler usage in concrete models</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/Default.html">system\data-handling</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>__construct()
+        </h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="deleteById" id="deleteById"></a><div class="element clickable method public deleteById" data-toggle="collapse" data-target=".deleteById .collapse">
+<h2>Delete rows by id(you can delete multiple if you change $column to other value based on your table layout (1:m relation))</h2>
+<pre>deleteById(int $id, string $column) : <a href="../classes/DataAccessResult.html">\DataAccessResult</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::deleteById()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/DataAccessResult.html">\DataAccessResult</a></code></div>
+</div></div>
+</div>
+<a name="getAll" id="getAll"></a><div class="element clickable method public getAll" data-toggle="collapse" data-target=".getAll .collapse">
+<h2>Gets all rows in table</h2>
+<pre>getAll(string $select_columns) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::getAll()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$select_columns</h4>
+<code>string</code><p>comma separated string injected in select part of query</p></div>
+</div></div>
+</div>
+<a name="getAllFiltered" id="getAllFiltered"></a><div class="element clickable method public getAllFiltered" data-toggle="collapse" data-target=".getAllFiltered .collapse">
+<h2>Gets all rows filtered</h2>
+<pre>getAllFiltered(array $filters, string $select_columns) : \Ambigous</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>$filters[row] = array(  "column"=>"which column",
+                            "operation"=>"value like = &lt; &lt;>",
+                            "value"=>"compare to what value")</p></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::getAllFiltered()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filters</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$select_columns</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\Ambigous</code><boolean, DataAccessResult></div>
+</div></div>
+</div>
+<a name="getAllPaged" id="getAllPaged"></a><div class="element clickable method public getAllPaged" data-toggle="collapse" data-target=".getAllPaged .collapse">
+<h2>getAllPaged()
+        </h2>
+<pre>getAllPaged($select_columns, $page, $col, $sort, $page_size) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Model::getAllPaged()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$select_columns</h4></div>
+<div class="subelement argument"><h4>$page</h4></div>
+<div class="subelement argument"><h4>$col</h4></div>
+<div class="subelement argument"><h4>$sort</h4></div>
+<div class="subelement argument"><h4>$page_size</h4></div>
+</div></div>
+</div>
+<a name="getAllPagedFiltered" id="getAllPagedFiltered"></a><div class="element clickable method public getAllPagedFiltered" data-toggle="collapse" data-target=".getAllPagedFiltered .collapse">
+<h2>getAllPagedFiltered()
+        </h2>
+<pre>getAllPagedFiltered($filters, $select_columns, $page, $col, $sort, $page_size) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Model::getAllPagedFiltered()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$filters</h4></div>
+<div class="subelement argument"><h4>$select_columns</h4></div>
+<div class="subelement argument"><h4>$page</h4></div>
+<div class="subelement argument"><h4>$col</h4></div>
+<div class="subelement argument"><h4>$sort</h4></div>
+<div class="subelement argument"><h4>$page_size</h4></div>
+</div></div>
+</div>
+<a name="getById" id="getById"></a><div class="element clickable method public getById" data-toggle="collapse" data-target=".getById .collapse">
+<h2>Gets row by id(or whatever the key column's name is by changing $id_column value to corresponding column name)</h2>
+<pre>getById(int $id, string $id_column) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::getById()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$id_column</h4>
+<code>string</code><p>return DataAccessResult</p></div>
+</div></div>
+</div>
+<a name="getLastId" id="getLastId"></a><div class="element clickable method public getLastId" data-toggle="collapse" data-target=".getLastId .collapse">
+<h2>getLastId()
+        </h2>
+<pre>getLastId() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Model::getLastId()</td>
+</tr></table>
+</div></div>
+</div>
+<a name="save" id="save"></a><div class="element clickable method public save" data-toggle="collapse" data-target=".save .collapse">
+<h2>Updates table if $key[1] is &gt; 0 and if $key[1] == 0 inserts a new row</h2>
+<pre>save(array $key, array $fields) : <a href="../classes/DataAccessResult.html">\DataAccessResult</a> | false</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::save()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>array</code><p>Structure $key = array($key_name, $key_value)</p>
+</div>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/DataAccessResult.html">\DataAccessResult</a></code><code>false</code>
+</div>
+</div></div>
+</div>
+<a name="getLimitStart" id="getLimitStart"></a><div class="element clickable method protected getLimitStart" data-toggle="collapse" data-target=".getLimitStart .collapse">
+<h2>getLimitStart()
+        </h2>
+<pre>getLimitStart($count_sql, $params, $page, $page_size) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Model::getLimitStart()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$count_sql</h4></div>
+<div class="subelement argument"><h4>$params</h4></div>
+<div class="subelement argument"><h4>$page</h4></div>
+<div class="subelement argument"><h4>$page_size</h4></div>
+</div></div>
+</div>
+<a name="retrieve" id="retrieve"></a><div class="element clickable method protected retrieve" data-toggle="collapse" data-target=".retrieve .collapse">
+<h2>Executes query and returns DataAccessResult</h2>
+<pre>retrieve(string $sql, array $params) : boolean | <a href="../classes/DataAccessResult.html">\DataAccessResult</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="">Goran Despotoski</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Dao::retrieve()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::retrieve()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code><code><a href="../classes/DataAccessResult.html">\DataAccessResult</a></code>
+</div>
+</div></div>
+</div>
+<a name="update" id="update"></a><div class="element clickable method protected update" data-toggle="collapse" data-target=".update .collapse">
+<h2>update()
+        </h2>
+<pre>update($sql, $params) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Dao::update()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::update()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$sql</h4></div>
+<div class="subelement argument"><h4>$params</h4></div>
+</div></div>
+</div>
+<a name="DataAccessFactory" id="DataAccessFactory"></a><div class="element clickable method private DataAccessFactory" data-toggle="collapse" data-target=".DataAccessFactory .collapse">
+<h2>DataAccessFactory()
+        </h2>
+<pre>DataAccessFactory() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Dao::DataAccessFactory()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::DataAccessFactory()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24db" id="$db"> </a><div class="element clickable property protected $db" data-toggle="collapse" data-target=".$db .collapse">
+<h2>$db</h2>
+<pre>$db </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Model::$$db</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24global" id="$global"> </a><div class="element clickable property protected $global" data-toggle="collapse" data-target=".$global .collapse">
+<h2>$global</h2>
+<pre>$global </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Dao::$$global</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::$$global</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24page_count" id="$page_count"> </a><div class="element clickable property protected $page_count" data-toggle="collapse" data-target=".$page_count .collapse">
+<h2>$page_count</h2>
+<pre>$page_count </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Model::$$page_count</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24da" id="$da"> </a><div class="element clickable property private $da" data-toggle="collapse" data-target=".$da .collapse">
+<h2>$da</h2>
+<pre>$da </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Dao::$$da</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Model::$$da</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24sql" id="$sql"> </a><div class="element clickable property private $sql" data-toggle="collapse" data-target=".$sql .collapse">
+<h2>$sql</h2>
+<pre>$sql </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Model::$$sql</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24table_name" id="$table_name"> </a><div class="element clickable property private $table_name" data-toggle="collapse" data-target=".$table_name .collapse">
+<h2>$table_name</h2>
+<pre>$table_name </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Model::$$table_name</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-09-21T16:13:55+02:00.<br></footer></div>
+</div>
+</body>
+</html>
