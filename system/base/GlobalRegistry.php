@@ -1,7 +1,11 @@
 <?php
 /**
- * GlobalRegiustry database is used for storage of global variables in order to prevent interruptions in the global 
- * variable workspace
+ * @package system\data-handling
+ */
+// namespace walkmvc\data;
+/**
+ * GlobalRegistry class is used for storage of global variables in order to prevent interruptions in the global 
+ * variable workspace and use its attributes in functions and classes easily 
  * 
  * @property string $siteUrl
  * @property string $fileSystemPath
@@ -13,10 +17,10 @@
  * @property array $viewData
  * @property array $libraries
  * 
+ * @package system\data-handling
  * @author Goran Despotoski
  *
  */
-
 class GlobalRegistry
 {
 	static $_instance;

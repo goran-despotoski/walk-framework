@@ -1,7 +1,21 @@
 <?php
+/**
+ * @package system\request-handling
+ *  
+ */
+// namespace walkmvc\request;
+
+// use walkmvc\request\Controller;
+// use walkmvc\data\GlobalRegistry;
+/**
+ * Dispatches all the requests to controllers and actions
+ * Returns an error message to the user if the controller or action don't exist
+ * @package system\request-handling 
+ * @author Goran Despotoski
+ *
+ */
 class Dispatcher
 {
-//	@todo Ova mora da se dovrsi, delot so userfriendly url-a rutiranje ne e dovrsen
 	public function __construct()
 	{
 		$global = GlobalRegistry::getInstance();
@@ -11,7 +25,7 @@ class Dispatcher
 			$uri_chunks = explode('/',$uri); //get chunks from uri, traverse through them and find the 
 			
 			$tmp = "";
-			$controller_file = "welcome";
+			$controller_file = "main";
 			$action = "";
 			$found_controller_file = false;
 			$controller_class = ""; 

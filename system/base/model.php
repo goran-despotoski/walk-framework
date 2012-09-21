@@ -1,4 +1,16 @@
 <?php
+/**
+ * 
+ * @package system\data-handling
+ */
+// namespace walkmvc\data;
+/**
+ * 
+ * This class is an added layer for simpler usage in concrete models
+ * @package system\data-handling
+ * @author Goran Despotoski
+ *
+ */
 class Model extends Dao
 {
 	protected $db;

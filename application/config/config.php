@@ -1,4 +1,5 @@
 <?php
+// use walkmvc\data\GlobalRegistry;
 $global = GlobalRegistry::getInstance();/* @var $global GlobalRegistry */
 
 $environment = (isset($_SERVER["APPLICATION_ENV"]))?$_SERVER["APPLICATION_ENV"]:"live";

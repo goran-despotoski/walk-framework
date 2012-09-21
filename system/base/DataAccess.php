@@ -1,8 +1,15 @@
 <?php
 /**
- * 
- * Enter description here ...
+ * @package system\data-handling
+ */
+// namespace walkmvc\data;
+
+// use \PDO;
+// use \Exception;
+/**
+ * Data Access Object plus
  * @property PDO $db
+ * @package system\data-handling
  * @author Goran Despotoski
  *
  */
@@ -30,6 +37,15 @@ class DataAccess
 		
 	}
 	
+	/**
+	 * 
+	 * Returns result from a given sql query with given parameters
+	 *  
+	 * @param string $sql Sql query
+	 * @param array $params 
+	 * @throws Exception If there is an error with db connection, error is shown
+	 * @return \walkmvc\data\DataAccessResult
+	 */
 	public function & fetch($sql, $params = array())
 	{
 		try{
@@ -50,11 +66,17 @@ class DataAccess
 		return $dar;
 	}
 	
+	/**
+	 * Gets the last insert id after inserting operation
+	 */
 	public function getLastId()
 	{
 		return $this->db->lastInsertId();
 	}
 	
+	/**
+	 * Gets the error code
+	 */
 	public function isError()
 	{
 		return $this->db->errorCode();
@@ -63,7 +85,7 @@ class DataAccess
 
 /**
  * 
- * Enter description here ...
+ * Provides interface for most common methods for result manipulation
  * @property PDOStatement $res
  * @property DataAccess $da
  * @author Goran Despotoski
@@ -80,6 +102,11 @@ class DataAccessResult
 		$this->res = $res;
 	} 
 	
+	/**
+	 * Gets a new row from the result set or returns
+	 * @return array|false Returns result row on true, and false when there are no rows found
+	 * @author Goran Despotoski
+	 */
 	public function getRow()
 	{
 		
@@ -88,6 +115,11 @@ class DataAccessResult
 		else return false;
 	}
 	
+	/**
+	 * Gets the first element of the first row
+	 * @return string|false Returns first element from result row or false when there are no rows found
+	 * @author Goran Despotoski
+	 */
 	public function getVar()
 	{
 		if($row = $this->res->fetch())
@@ -95,16 +127,30 @@ class DataAccessResult
 		else return false;
 	}
 	
+	/**
+	 * Resets the result set to first row
+	 * @author Goran Despotoski 
+	 */
 	public function reset()
 	{
 		if($this->res->rowCount() > 0)
 			$this->res->fetch(PDO::FETCH_ASSOC,PDO::FETCH_ORI_FIRST);
 	}
 	
+	/**
+	 * Gets the row count of result set
+	 * @return number Row count of result set
+	 * @author Goran Despotoski
+	 */
 	public function rowCount(){
 		return $this->res->rowCount();
 	}
 	
+	/**
+	 * Checks if query returned an error and returns an error, otherwise returns false
+	 * @return string|false Returns string for error code or false if no error code was found
+	 * @author Goran Despotoski
+	 */
 	public function isError()
 	{
 		$error = $this->da->isError();
@@ -114,6 +160,12 @@ class DataAccessResult
 	}
 }
 
+/**
+ * 
+ * Provides basic methods for executing update/insert commands and retrieving from select commands
+ * @author Goran Despotoski
+ *
+ */
 class Dao
 {
 	private $da;

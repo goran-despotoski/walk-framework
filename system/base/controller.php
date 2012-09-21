@@ -1,6 +1,11 @@
 <?php
 /**
- *
+ * @package system\request-handling
+ */
+// namespace walkmvc\request;
+
+// use walkmvc\data\GlobalRegistry;
+/**
  * Controller class
  * @property GlobalRegistry $global
  * @property array $post;
@@ -9,6 +14,7 @@
  * @property string $message;
  * @property string $message_type;
  * 
+ * @package system\request-handling
  * @author Goran Despotoski
  *
  */
@@ -123,6 +129,24 @@ class Controller
 		}
 		else 
 			trigger_error("Component file '".$this->global->fileSystemPath . "system/components/".$component.".php' does not exist!", E_USER_WARNING);
+	}
+	
+	/**
+	 *
+	 * Loads library for using class in the library
+	 * If library is in subfolder, include the local path from libraries  
+	 * Example call: $this->load_library("auth/auth.php");
+	 * calling the class would be: $obj = new auth();
+	 * @param $library
+	 * @author Goran Despotoski
+	 */
+	protected function load_library($library)
+	{
+		if(file_exists( $this->global->fileSystemPath . "system/libraries/".$library.".php") )
+		{
+			include_once($this->global->fileSystemPath . "system/libraries/".$library.".php");
+		}
+		else trigger_error("Library file '".$this->global->fileSystemPath . "system/libraries/".$library.".php' does not exist!", E_USER_WARNING);
 	}
 	
 	/**

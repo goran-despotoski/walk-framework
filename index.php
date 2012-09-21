@@ -13,5 +13,6 @@ require_once 'system/base/controller.php';
 require_once 'system/base/model.php';
 require_once 'system/base/dispatcher.php';
 
+// use walkmvc\request\Dispatcher;
 $dispatcher_instance = new Dispatcher(); 
 ?>

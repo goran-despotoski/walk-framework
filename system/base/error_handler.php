@@ -1,4 +1,18 @@
 <?php
+/**
+ * @package system\error-handling
+ * 
+ * 
+ */
+/**
+ * Handles errors thrown by php apps (known)
+ * @param int $errno
+ * @param string $errstr
+ * @param string $errfile
+ * @param string $errline
+ * @param unknown_type $errcontext
+ */
+
 function customError($errno, $errstr, $errfile,$errline,$errcontext)
 {
 	$error = "<div style='width:900px;border:1px dotted grey; margin: 0 auto;'>";
