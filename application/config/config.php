@@ -61,7 +61,7 @@ $global->viewData['meta_description']='GTO Studio Project Management Environment
 
 
 $global->libraries = array();
-$global->helpers = array("url", "time", "output");
+$global->helpers = array("input","url", "time", "output");
 
 $global->timeFormat = "G:i d.m.Y";
 

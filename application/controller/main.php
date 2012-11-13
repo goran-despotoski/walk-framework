@@ -17,8 +17,9 @@ class main extends Controller
 	public function index()
 	{
 		$this->data["res"] = $this->tests_model->getAll();
-		echo "Hello World from controller, you can now 'walk' with me through the view:";
-		$this->load_view("test");
+		echo "Hello World from controller, you can now 'walk' with me through the view:<br />";
+		//the second and third parameters are not required and are to include top and bottom files  
+		$this->load_view("test", "top","bottom");  
 	}
 }
 ?>
