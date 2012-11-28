@@ -86,13 +86,29 @@ class Controller
 				include_once($this->global->viewPath. $top.".php");
 			else trigger_error("View top file '".$this->global->viewPath. $top.".php' does not exist!",E_USER_WARNING);
 
-			if (file_exists( $this->global->viewPath . $view.".php"))
+			if(!is_array($view))
 			{
-				include_once($this->global->viewPath. $view.".php");
-			}
-			else 
+				if (file_exists( $this->global->viewPath . $view.".php"))
+				{
+					include_once($this->global->viewPath. $view.".php");
+				}
+				else 
+				{
+					trigger_error("View file ".$this->global->viewPath . $view.".php does not exist!",E_USER_WARNING);
+				}
+			}else 
 			{
-				trigger_error("View file ".$this->global->viewPath . $view.".php does not exist!",E_USER_WARNING);
+				foreach($view as $views_v)
+				{
+					if (file_exists( $this->global->viewPath . $views_v . ".php"))
+					{
+						include_once($this->global->viewPath . $views_v . ".php");
+					}
+					else
+					{
+						trigger_error("View file ".$this->global->viewPath . $views_v . ".php does not exist!",E_USER_WARNING);
+					}	
+				}
 			}
 			
 			if($bottom != '')
