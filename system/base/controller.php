@@ -79,29 +79,30 @@ class Controller
 	{
 		extract($this->data);
 		empty($this->data);
-		if($top != '')
-		if(file_exists( $this->global->viewPath . $top.".php"))
-			include_once($this->global->viewPath. $top.".php");
-		else trigger_error("View top file '".$this->global->viewPath. $top.".php' does not exist!",E_USER_WARNING);
-		
-		if($this->global->under_construction)
+		if(!$this->global->under_construction)
 		{
-			include_once($this->global->viewPath."/under_construction.php");
+			if($top != '')
+			if(file_exists( $this->global->viewPath . $top.".php"))
+				include_once($this->global->viewPath. $top.".php");
+			else trigger_error("View top file '".$this->global->viewPath. $top.".php' does not exist!",E_USER_WARNING);
+
+			if (file_exists( $this->global->viewPath . $view.".php"))
+			{
+				include_once($this->global->viewPath. $view.".php");
+			}
+			else 
+			{
+				trigger_error("View file ".$this->global->viewPath . $view.".php does not exist!",E_USER_WARNING);
+			}
+			
+			if($bottom != '')
+			if(file_exists( $this->global->viewPath . $bottom.".php") )
+				include_once($this->global->viewPath . $bottom.".php");
+			else 
+				trigger_error("View bottom file '".$this->global->viewPath . $bottom.".php' does not exist!",E_USER_WARNING);
+		} else {
+			include_once($this->global->viewPath."under_construction.php");
 		}
-		elseif (file_exists( $this->global->viewPath . $view.".php"))
-		{
-			include_once($this->global->viewPath. $view.".php");
-		}
-		else 
-		{
-			trigger_error("View file ".$this->global->viewPath . $view.".php does not exist!",E_USER_WARNING);
-		}
-		
-		if($bottom != '')
-		if(file_exists( $this->global->viewPath . $bottom.".php") )
-			include_once($this->global->viewPath . $bottom.".php");
-		else 
-			trigger_error("View bottom file '".$this->global->viewPath . $bottom.".php' does not exist!",E_USER_WARNING);
 	}
 	
 	/**
