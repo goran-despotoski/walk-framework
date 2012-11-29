@@ -109,7 +109,6 @@ class DataAccessResult
 	 */
 	public function getRow()
 	{
-		
 		if($row = $this->res->fetch(PDO::FETCH_ASSOC))
 			return $row;
 		else return false;
@@ -133,8 +132,8 @@ class DataAccessResult
 	 */
 	public function reset()
 	{
-		if($this->res->rowCount() > 0)
-			$this->res->fetch(PDO::FETCH_ASSOC,PDO::FETCH_ORI_FIRST);
+		$this->res->closeCursor();
+		$this->res->execute();
 	}
 	
 	/**

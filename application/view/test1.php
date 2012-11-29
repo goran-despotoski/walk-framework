@@ -1,7 +1,9 @@
 The second view included!
-
+<br /><br />
+start of second view
+<br /><br />
 <?php
-echo "start of second view view<br /><br />";
+$res->reset();
 while ($row = $res->getRow())
 {
 	var_dump($row);
