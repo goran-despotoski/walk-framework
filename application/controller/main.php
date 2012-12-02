@@ -21,5 +21,11 @@ class main extends Controller
 		//the second and third parameters are not required and are to include top and bottom files  
 		$this->load_view(array("test","test1"), "top","bottom");  
 	}
+	
+	public function parameters_test($a = 0,$b = 0)
+	{
+		echo "Change the first and second parameters ";
+		echo "a=" . $a . " and b = " . $b;
+	}
 }
 ?>
