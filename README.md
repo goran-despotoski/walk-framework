@@ -1,4 +1,4 @@
-walk-mvc framework, PHP MVC framework
+asfwalk-mvc framework, PHP MVC framework
 =======
 
 As the title says, Walk-MVC is a MVC PHP framework because I thought that there weren't enough PHP MVC frameworks around =D
