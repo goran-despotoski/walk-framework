@@ -8,7 +8,9 @@ This project was started while I was on faculty for the subject Software Enginee
 I'm hoping this to be a constantly changing PHP MVC project, so any help or questions or requests are wanted and much appreciated so please do contact me if interested in using it.
 
 NOTE:
-In order for the project to work, change the "/phpwalk" subdirectory in .htaccess (mod rewriting must be enabled) to the subdirectory name in your www root folder(or remove it if the application is in the root)
+In order for the project to work, change the "/phpwalk" subdirectory in .htaccess (mod rewriting must be enabled) to the subfolder name in your www root folder(or remove it if the application is in the www root)
+
+To not get an error when trying this demo, you need to create database tests with any content and then add the mysql database credentials to the /application/config/config.php file. 
 
 Regards,
 Goran 
