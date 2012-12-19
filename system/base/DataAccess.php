@@ -54,15 +54,18 @@ class DataAccess
 				$stmt->bindParam($v["column"], $v["value"]);
 			
 			if(!$stmt->execute()) throw new Exception("Sql Error:<b>" . $stmt->errorCode() ."</b><br />");
-//  			echo $stmt->queryString . "<br />";
-//  			echo $stmt->errorCode();
 		}
 		catch (Exception $e)
 		{
 			$global = GlobalRegistry::getInstance();
-			$str = "\n\n<b>Sql error:</b> " . $stmt->errorCode();
-			$str .="<br /><b>Query</b>: " . $stmt->queryString . "\n\n";
-			$str .= "<b>Exception that occured</b>: ".$e;
+			$str = "<b>Sql error:</b> " . $stmt->errorCode();
+			$str .="<br /><b>Query string</b>: " . $stmt->queryString. "<br />";
+			//var_dump();
+			$str .="<br /><b>Query params</b>: <br />";
+			foreach($params as $v)
+				$str .= "&nbsp;&nbsp;" . $v["column"] . ": ~" . $v["value"] . "~ <br />";
+			$str .= "<br />";
+// 			$str .= "<b>Exception that occured</b>: <pre>".$e ."</pre>";
 			$trace = debug_backtrace();
 			$errfile = $trace[1]["file"];
 			$errline = $trace[1]["line"];
