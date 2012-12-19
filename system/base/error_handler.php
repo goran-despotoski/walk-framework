@@ -15,6 +15,7 @@
 
 function customError($errno, $errstr, $errfile,$errline,$errcontext)
 {
+	$global = GlobalRegistry::getInstance();
 	$error = "<div style='width:900px;border:1px dotted grey; margin: 0 auto;'>";
 	$error .= "	<div style=\"margin:10px;font-size:13px;font-family:'Courier New', Courier, monospace;\">";
 	$error .= "<h2>Ooopss...</h2>";
@@ -43,18 +44,23 @@ function customError($errno, $errstr, $errfile,$errline,$errcontext)
         break;
     }
 	
+    $error .= "<br /><b>In file:</b><br />".$errfile."<br />";
+    
+    $error .= "<b>On Line:</b><br />".$errline."<br /><br />";
+    
+// 	$error .= "<pre>";
+	$error .= "<br />".$errstr."<br /><br />";
+// 	$error .= "</pre>";
 	
-	$error .= "<br />$errstr<br /><br />";
-	
-	
-	$error .= "<b>In file:</b><br />".$errfile."<br /><br />";
-	
-	$error .= "<b>On Line:</b><br />".$errline."<br /><br />";
 	$error .= "<b>Memory used:</b><br />".(int)(memory_get_usage() / 1024 )."kb<br />";
 	
 	$error .= "	</div>";
 	$error .= "</div>";
-	die($error);
+	
+	if($global->environment == "development")
+		die($error);
+	else
+		die("Died for some good oops error message :)");
 }
 
 set_error_handler("customError", E_ALL); 

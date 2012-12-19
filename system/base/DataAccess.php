@@ -43,7 +43,7 @@ class DataAccess
 	 *  
 	 * @param string $sql Sql query
 	 * @param array $params 
-	 * @throws Exception If there is an error with db connection, error is shown
+	 * @throws Exception If there is an error with db connection, error is shown and page is aborted
 	 * @return \walkmvc\data\DataAccessResult
 	 */
 	public function & fetch($sql, $params = array())
@@ -54,13 +54,19 @@ class DataAccess
 				$stmt->bindParam($v["column"], $v["value"]);
 			
 			if(!$stmt->execute()) throw new Exception("Sql Error:<b>" . $stmt->errorCode() ."</b><br />");
-// 			echo $stmt->queryString . "<br />";
-// 			echo $stmt->errorCode();
-			
+//  			echo $stmt->queryString . "<br />";
+//  			echo $stmt->errorCode();
 		}
 		catch (Exception $e)
 		{
-			trigger_error($e);
+			$global = GlobalRegistry::getInstance();
+			$str = "\n\n<b>Sql error:</b> " . $stmt->errorCode();
+			$str .="<br /><b>Query</b>: " . $stmt->queryString . "\n\n";
+			$str .= "<b>Exception that occured</b>: ".$e;
+			$trace = debug_backtrace();
+			$errfile = $trace[1]["file"];
+			$errline = $trace[1]["line"];
+			customError(E_USER_ERROR, $str, $errfile, $errline, '');
 		}
 		$dar = new DataAccessResult($this, $stmt);
 		return $dar;

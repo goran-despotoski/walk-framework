@@ -2,10 +2,10 @@
 // use walkmvc\data\GlobalRegistry;
 $global = GlobalRegistry::getInstance();/* @var $global GlobalRegistry */
 
-$environment = (isset($_SERVER["APPLICATION_ENV"]))?$_SERVER["APPLICATION_ENV"]:"live";
+$global->environment = (isset($_SERVER["APPLICATION_ENV"]))?$_SERVER["APPLICATION_ENV"]:"production";
 
 $global->subFolder			= "";
-if($environment == "development")
+if($global->environment == "development")
 	$global->subFolder			=	"phpwalk/"; /** @var $global->fileSystemPath string */
 
 $global->siteUrl			=	"http://" . $_SERVER['HTTP_HOST'] . "/" . $global->subFolder; 
@@ -35,7 +35,7 @@ $db_dev['database']="manage";
 $db_dev['user']="root";
 $db_dev['password']="root";
 
-if($environment != "development")
+if($global->environment == "production")
 {
 	$global->db=array(
 			'type'=>"mysql",
@@ -44,7 +44,7 @@ if($environment != "development")
 			'user'=>"root",
 			'password'=>"root"
 			);
-}else
+}elseif($global->environment == "development")
 {
 	$global->db=array(
 			'type'=>"mysql",

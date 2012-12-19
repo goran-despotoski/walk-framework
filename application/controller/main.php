@@ -18,12 +18,16 @@ class main extends Controller
 	{
 		$this->data["res"] = $this->tests_model->getAll();
 		echo "Hello World from controller, you can now 'walk' with me through the view:<br />";
-		//the second and third parameters are not required and are to include top and bottom files  
+		//the second and third parameters are not required and are to include top and bottom files
+
+		$this->data["retrieved"] = $this->tests_model->retrieveShowcase();
+		
 		$this->load_view(array("test","test1"), "top","bottom");  
 	}
 	
 	public function parameters_test($a = 0,$b = 0)
 	{
+		
 		echo "Change the first and second parameters ";
 		echo "a=" . $a . " and b = " . $b;
 	}
