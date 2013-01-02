@@ -24,8 +24,9 @@ class main extends Controller
 	
 	public function parameters_test($a = 0,$b = 0)
 	{
-		echo "Change the first and second parameters ";
-		echo "a=" . $a . " and b = " . $b;
+		$this->data["a"] = $a;
+		$this->data["b"] = $b;
+		$this->load_view("test_variables");
 	}
 }
 ?>
