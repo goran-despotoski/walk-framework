@@ -72,6 +72,8 @@ class Dispatcher
 					$controller_instance = new $controller_class();
 					if(method_exists($controller_instance,$action))
 					{
+						$global->controller = $controller_file;
+						$global->action = $action;
 						call_user_func_array(array($controller_instance, $action),$params);
 					}else{
 						trigger_error("Action " . $action . " not found", E_USER_NOTICE);
