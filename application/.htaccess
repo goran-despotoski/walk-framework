@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond $1 !\.(gif|jpe?g|png)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /phpwalk/application/index.php?uri=$1 [L,QSA]
