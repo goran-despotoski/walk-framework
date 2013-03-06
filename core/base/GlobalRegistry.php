@@ -51,7 +51,16 @@ class GlobalRegistry
 	 */
 	public function __get($key)
 	{
-		return $this->$key;
+		if(isset($this->$key))
+			return $this->$key;
+		
+		$trace = debug_backtrace();
+		trigger_error(
+		'Undefined Global property : ' . $key.
+		' in ' . $trace[0]['file'] .
+		' on line ' . $trace[0]['line'],
+		E_USER_NOTICE);
+		return null;
 	}
 	/**
 	 * Magic setter for GlobalRegistry attributes

@@ -129,23 +129,11 @@ class Controller
 	 */
 	protected function load_helper($helper)
 	{
-		if(file_exists( $this->global->fileSystemPath . "system/helpers/".$helper.".php") )
+		if(file_exists( $this->global->corePath . "helpers/".$helper.".php") )
 		{
-			include_once($this->global->fileSystemPath . "system/helpers/".$helper.".php");
+			require_once($this->global->corePath . "helpers/".$helper.".php");
 		}
-		else trigger_error("Helper file '".$this->global->fileSystemPath . "system/helper/".$helper.".php' does not exist!", E_USER_WARNING);
-	}
-	
-	protected function load_component($component, $type = "object")
-	{
-		if(file_exists( $this->global->fileSystemPath . "system/components/".$component.".php") )
-		{
-			include_once($this->global->fileSystemPath . "system/components/".$component.".php");
-			if($type == "object")
-				$this->$component = new $component();
-		}
-		else 
-			trigger_error("Component file '".$this->global->fileSystemPath . "system/components/".$component.".php' does not exist!", E_USER_WARNING);
+		else trigger_error("Helper file '".$this->global->corePath . "helpers/".$helper.".php' does not exist!", E_USER_WARNING);
 	}
 	
 	/**
@@ -159,11 +147,9 @@ class Controller
 	 */
 	protected function load_library($library)
 	{
-		if(file_exists( $this->global->fileSystemPath . "system/libraries/".$library.".php") )
-		{
-			include_once($this->global->fileSystemPath . "system/libraries/".$library.".php");
-		}
-		else trigger_error("Library file '".$this->global->fileSystemPath . "system/libraries/".$library.".php' does not exist!", E_USER_WARNING);
+		if(file_exists( $this->global->corePath . "libraries/".$library.".php") )
+			include_once($this->global->corePath. "libraries/".$library.".php");
+		else trigger_error("Library file '".$this->global->corePath . "libraries/".$library.".php' does not exist!", E_USER_WARNING);
 	}
 }
 ?>

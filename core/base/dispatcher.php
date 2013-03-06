@@ -3,10 +3,7 @@
  * @package system\request-handling
  *  
  */
-// namespace walkmvc\request;
 
-// use walkmvc\request\Controller;
-// use walkmvc\data\GlobalRegistry;
 /**
  * Dispatches all the requests to controllers and actions
  * Returns an error message to the user if the controller or action don't exist
@@ -19,7 +16,7 @@ class Dispatcher
 	public function __construct()
 	{
 		$global = GlobalRegistry::getInstance();
-		$uri = (isset($_GET["uri"]))?$_GET["uri"]:$global->defaultController;
+		$uri = (isset($_GET["uri"]) && trim($_GET["uri"]) != "")?$_GET["uri"]:$global->defaultController;
 		if($uri != "")
 		{
 			$uri_chunks = explode('/',$uri); //get chunks from uri, traverse through them and find the 
