@@ -1,0 +1,9 @@
+<?php
+$global->db=array(
+			'type'=>"mysql",
+			'host'=>"localhost",
+			'database'=>"test_blog",
+			'user'=>"root",
+			'password'=>"root"
+		);
+?>

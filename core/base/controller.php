@@ -129,11 +129,10 @@ class Controller
 	 */
 	protected function load_helper($helper)
 	{
+		if(file_exists( $this->global->appPath . "helpers/".$helper.".php") )
+			require_once($this->global->appPath . "helpers/".$helper.".php");
 		if(file_exists( $this->global->corePath . "helpers/".$helper.".php") )
-		{
 			require_once($this->global->corePath . "helpers/".$helper.".php");
-		}
-		else trigger_error("Helper file '".$this->global->corePath . "helpers/".$helper.".php' does not exist!", E_USER_WARNING);
 	}
 	
 	/**
@@ -147,9 +146,24 @@ class Controller
 	 */
 	protected function load_library($library)
 	{
-		if(file_exists( $this->global->corePath . "libraries/".$library.".php") )
-			include_once($this->global->corePath. "libraries/".$library.".php");
-		else trigger_error("Library file '".$this->global->corePath . "libraries/".$library.".php' does not exist!", E_USER_WARNING);
+		if(file_exists( $this->global->appPath . "libraries/".$library.".php"))
+			require_once($this->global->appPath. "libraries/".$library.".php");
+		if(file_exists( $this->global->corePath . "libraries/".$library.".php"))
+			require_once($this->global->corePath. "libraries/".$library.".php");
+	}
+	
+	protected function load_component($component)
+	{
+		if(file_exists( $this->global->appPath . "components/".$component.".php") )
+		{
+			require_once($this->global->appPath . "components/".$component.".php");
+			$this->$component =  new $component;
+		}
+		if(file_exists( $this->global->corePath . "components/".$component.".php") )
+		{
+			require_once($this->global->corePath . "components/".$component.".php");
+			$this->$component =  new $component;
+		}
 	}
 }
 ?>

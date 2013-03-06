@@ -3,7 +3,7 @@
 $global = GlobalRegistry::getInstance();/* @var $global GlobalRegistry */
 $global->subFolder			=	$appSubFolder; /** @var $global->fileSystemPath string */
 
-$global->siteUrl			=	"http://" . $_SERVER['HTTP_HOST'] . "/". $global->base_path . $global->subFolder; 
+$global->siteUrl			=	"http://" . $_SERVER['HTTP_HOST'] . "/". $global->basePath . $global->subFolder; 
 
 $global->RelativeSiteUrl	=	"/" . $global->subFolder;
 $global->fileSystemPath		=	$appPath; /* @var $global->fileSystemPath GlobalRegistry */

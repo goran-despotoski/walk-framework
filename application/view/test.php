@@ -10,11 +10,4 @@ while ($row = $res->getRow())
 {
 	var_dump($row);
 }
-
-echo "These are retrieved without using the simple functions:<br />";
-while ($row = $retrieved->getRow())
-{
-	var_dump($row);
-}
-echo "end of first view<br /><br />";
 ?>

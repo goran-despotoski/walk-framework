@@ -57,10 +57,7 @@ function customError($errno, $errstr, $errfile,$errline,$errcontext)
 	$error .= "	</div>";
 	$error .= "</div>";
 	
-	if($global->environment == "development")
-		die($error);
-	else
-		die("Died for some good oops error message :)");
+	echo $error;
 }
 
 set_error_handler("customError", E_ALL); 
